@@ -93,7 +93,7 @@ void matrix::fixup(){
 		}
 		for(int k = 0; k < m; k++){
 			if(cell[k][i])
-				cell[k][i] = 1.0/counter;
+				cell[k][i] = (long double)1/counter;
 		}
 		counter = 0;
 	}
