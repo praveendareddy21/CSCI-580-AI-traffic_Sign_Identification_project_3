@@ -8,16 +8,46 @@
 
 using namespace std;
 
-//converts NSWE or a substring thereof into an integer resulting from the binary value of the contents
-// bitmasked in that order where N is 0 bit and E is the 8 bit. Possible values are 0-15
+//adapted from code below, this gets a count of columns from input file
+int getColumns(string fname){
+  string line;
+  int columns = 0;
+  ifstream ifile;
+  ifile.open(fname.c_str());
+  while(getline(ifile, line)){
+    istringstream ss(line);
+    string temp;
+    while(!ss.eof()){
+      getline(ss, temp, ' ');
+      columns++;
+    }
+    return columns;
+  }
+}
+
+//adapted from code below, this gets a count of lines in input file
+int getRows(string fname){
+  string line;
+  int rows = 0;
+  ifstream ifile;
+  ifile.open(fname.c_str());
+  while(getline(ifile, line)){
+    istringstream ss(line);
+    string temp;
+    while(!ss.eof()){
+      getline(ss, temp, ' ');
+    }
+    rows++;
+  }
+  return rows;
+}
 
 int main(int argc, char const *argv[]) {
   if(argc < 5){
     cout << "usage: ./robot input_file sensory_error observations" << endl;
     return 1;
   }
-
-  Matrix gridWorld;
+  int n, m;
   string fname;
   string line;
   int row = 0;
@@ -30,8 +60,15 @@ int main(int argc, char const *argv[]) {
     observations[j] = argv[i];
   }
 
+  m = getRows(fname);
+  n = getColumns(fname);
+  matrix myMatrix(m, n);
+
+  m = n = 0;
+
   ifstream ifile;
-  ifile.open(fname);
+
+  ifile.open(fname.c_str());
   if(ifile){
     //get the whole line
     while(getline(ifile, line)){
@@ -41,21 +78,15 @@ int main(int argc, char const *argv[]) {
       //while we have not parsed the entire line
       while(!ss.eof()){
         getline(ss, temp, ' ');//using getline to get strings one word at a time, space delimited
-        gridWorld.cell[row][column] = atoi(temp.c_str());
-        column++;
+        myMatrix.set(m, n, atoi(temp.c_str()));
+        n++;
       }
-      column = 0;
-      row++;
+      n = 0;
+      m++;
     }
-    for(int i = 0; i < gridWorld.getRows(); i++){
-      for(int j = 0; j < gridWorld.getColumns(); j++){
-        cout << " " << gridWorld.cell[i][j];
-      }
-      cout << endl;
-    }
-    exit(0);
     //the matrix is full now
-
+    robot myRobot(&myMatrix, observations, (argc-3));
+    myRobot.process();
   }
   else{cout<<"Bad filename, check permissions \n";}
 
