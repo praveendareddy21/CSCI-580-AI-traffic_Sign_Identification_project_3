@@ -7,7 +7,10 @@
 #include <vector>
 
 using namespace std;
-
+/*Converts a string of form NSWE to the integer value
+    creating by mapping N to bit 3 S to bit 2 W to bit
+    1 and E to bit 0
+*/
 int robot::toInt(string input){
   int retval = 0;
   if(input.find('N') != string::npos){
@@ -25,6 +28,10 @@ int robot::toInt(string input){
   return retval;
 }
 
+/*Converts a string of form NSWE to the integer value
+    creating by mapping N to bit 3 S to bit 2 W to bit
+    1 and E to bit 0
+*/
 int robot::bitComp(int num, string obstacles){
   int count = 0;
   bitset<4>obstacle = toInt(obstacles);
@@ -37,6 +44,9 @@ int robot::bitComp(int num, string obstacles){
   return count;
 }
 
+/*The "main()" for robot. Creates all matrices and does all
+    probability calculations
+*/
 void robot::process(){
 
   //initialize the transitivity matrix
@@ -61,8 +71,10 @@ void robot::process(){
     }
   }
 
+  //set the values to their correct probabilities
   trans.fixup();
 
+  //Joint probability matrix
   matrix j0(trans.n, 1);
   int count = 0;
 
@@ -74,6 +86,7 @@ void robot::process(){
       count++;
     }
   }
+  //set the values to correct probabilites
   j0.fixup();
 
   matrix z(trans.n, 1);
@@ -110,7 +123,6 @@ void robot::process(){
 
   long double estimation_probability = y1.highest();
 
-  //this is printing, should be fine
   cout << std::showpoint << std::fixed << setprecision(12) << estimation_probability;
   vector<int> biggests;
 
@@ -127,7 +139,7 @@ void robot::process(){
   }
   cout << endl;
 
-  //for the rest of the times
+  //for the non initial o
   for(int i = 1; i < numObservations ;i++){
     //initialize the observation matrix
     for(int j = 0; j < trans.n; j++){
@@ -145,7 +157,8 @@ void robot::process(){
     y1.smult(E);
 
     long double estimation_probability = y1.highest();
-    
+
+    //print block
     cout << std::showpoint << std::fixed << setprecision(12) << estimation_probability;
     vector<int> biggests;
 

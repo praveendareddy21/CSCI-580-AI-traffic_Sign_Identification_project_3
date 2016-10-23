@@ -4,11 +4,16 @@
 #include <bitset>
 
 using namespace std;
-
-void matrix::set(int m, int n, int value){
+/*
+	set the value for a specific cell
+*/
+void matrix::set(int m, int n, long double value){
 	cell[m][n] = value;
 }
 
+/*
+	set scalar multiply the entire matrix by a value
+*/
 void matrix::smult(long double x){
 	for(int i = 0; i < m; i++){
 		for(int j = 0; j < n; j++){
@@ -17,6 +22,9 @@ void matrix::smult(long double x){
 	}
 }
 
+/*
+	returns the highest value in the matrix
+*/
 long double matrix::highest(){
 	long double highest = 0;
 	for(int i = 0; i < m; i++){
@@ -29,6 +37,10 @@ long double matrix::highest(){
 	return highest;
 }
 
+/*
+	prints the contents of the matrix
+	used for debugging
+*/
 void matrix::print(){
   for(int i = 0; i < m; i++){
     for(int j = 0; j < n; j++){
@@ -38,6 +50,12 @@ void matrix::print(){
   }
 }
 
+/*
+	matrix multiplication function;
+		takes two matrices and multiplies them,
+		storing the result in the matrix that the function
+		was called on
+*/
 void matrix::mmult(matrix* m1, matrix* m2){
 	for(int i = 0; i < m1->m; i++){
 		for(int j = 0; j < m2->n; j++){
@@ -49,6 +67,9 @@ void matrix::mmult(matrix* m1, matrix* m2){
 	}
 }
 
+/*
+	sums the values of a matrix
+*/
 long double matrix::sumValues(){
 	long double result = 0;
 	for(int i = 0; i < m; i++){
@@ -59,6 +80,10 @@ long double matrix::sumValues(){
 	return result;
 }
 
+/*
+	 counts all of the nonzero values in a column
+	 	and sets the value of each to 1/that value
+*/
 void matrix::fixup(){
 	for(int i = 0; i < n; i++){
 		long double counter = 0;
@@ -74,6 +99,11 @@ void matrix::fixup(){
 	}
 }
 
+/*
+	returns a boolean value
+		if the cell is inbounds it returns true
+		otherwise returns false
+*/
 bool matrix::inbounds(int row, int col){
 	if(row >= m)
 		return false;
@@ -86,6 +116,10 @@ bool matrix::inbounds(int row, int col){
 	return true;
 }
 
+/*
+		takes two cell's coordinates and returns true if the cells are adjacent
+			false if they are not
+*/
 bool matrix::adjacent(int m1, int n1, int m2, int n2){
   if(m1 != m2 && n1 != n2){
     return false;

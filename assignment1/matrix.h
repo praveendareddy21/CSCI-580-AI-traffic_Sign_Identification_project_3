@@ -32,7 +32,7 @@ public:
   void fixup();
   bool reachable(int, int, int, int);
   bool adjacent(int, int, int, int);
-  void set(int, int, int);
+  void set(int, int, long double);
   bool adjacent(int, int);
   int valids();
   bool inbounds(int, int);
