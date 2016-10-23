@@ -118,7 +118,7 @@ void robot::process(){
 
   J.mmult(&trans, &y1);
 
-  long double E = 1.0/y1.sumValues();
+  long double E = (long double)1.0/y1.sumValues();
   y1.smult(E);
 
   long double estimation_probability = y1.highest();
@@ -153,7 +153,7 @@ void robot::process(){
     y1.mmult(&ob, &J);
     J.mmult(&trans, &y1);
 
-    long double E = 1.0/y1.sumValues();
+    long double E = (long double)1.0/y1.sumValues();
     y1.smult(E);
 
     long double estimation_probability = y1.highest();
