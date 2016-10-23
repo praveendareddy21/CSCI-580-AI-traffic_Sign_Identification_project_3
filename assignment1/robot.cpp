@@ -171,7 +171,7 @@ void robot::process(){
     }
 
     for(int i = 0; i < biggests.size(); i++){
-      cout << " " << biggests[i];
+      cout << " " <<  biggests[i];
     }
     cout << endl;
   }
