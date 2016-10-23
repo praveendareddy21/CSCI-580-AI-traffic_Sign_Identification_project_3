@@ -137,7 +137,7 @@ void robot::process(){
   for(int i = 0; i < biggests.size(); i++){
     cout << " " << biggests[i];
   }
-  cout << endl;
+  cout << " " << endl;
 
   //for the non initial o
   for(int i = 1; i < numObservations ;i++){
