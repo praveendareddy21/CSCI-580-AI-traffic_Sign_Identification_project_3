@@ -22,8 +22,11 @@ public:
    }
 
    ~matrix(){
-     delete [] cell;
+     //delete [] cell;
    }
+  long double highest();
+  void smult(long double x);
+  long double sumValues();
   void observations();
   void mmult(matrix*, matrix*);
   void fixup();

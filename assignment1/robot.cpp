@@ -2,9 +2,40 @@
 #include <iostream>
 #include <map>
 #include <utility>
+#include <bitset>
+#include <iomanip>
+#include <vector>
 
 using namespace std;
 
+int robot::toInt(string input){
+  int retval = 0;
+  if(input.find('N') != string::npos){
+    retval += 8;
+  }
+  if(input.find('S') != string::npos){
+    retval += 4;
+  }
+  if(input.find('W') != string::npos){
+    retval += 2;
+  }
+  if(input.find('E') != string::npos){
+    retval += 1;
+  }
+  return retval;
+}
+
+int robot::bitComp(int num, string obstacles){
+  int count = 0;
+  bitset<4>obstacle = toInt(obstacles);
+  bitset<4>cell = num;
+  for(int i = 0; i < 4; i++){
+    if(cell[i] != obstacle[i]){
+      count++;
+    }
+  }
+  return count;
+}
 
 void robot::process(){
 
@@ -29,6 +60,7 @@ void robot::process(){
         trans.cell[i*grid->n+j][i*grid->n+j+1] = 1.0;
     }
   }
+
   trans.fixup();
 
   matrix j0(trans.n, 1);
@@ -44,15 +76,91 @@ void robot::process(){
   }
   j0.fixup();
 
-  matrix px1(trans.n, 1);
+  matrix z(trans.n, 1);
 
-  px1.mmult(&trans, &j0);
-  px1.print();
+  z.mmult(&trans, &j0);
 
-  for(int i = 0; i < numObs; i++){
-    
+  matrix ob(trans.n, trans.n);
+
+  matrix e1(trans.n, 1);
+
+  matrix estimation(trans.n, 1);
+
+  matrix J(trans.n, 1);
+  J = z;
+
+  matrix y1(trans.n, 1);
+
+  //setting the observation matrix values
+  for(int j = 0; j < trans.n; j++){
+    if(grid->cell[j/(grid->n)][j%grid->n] == 15){
+      ob.cell[j][j] = 0;
+    }
+    else{
+      ob.cell[j][j] = bitDiff[bitComp(grid->cell[j/(grid->n)][j%grid->n], observations[0])];
+    }
+  }
+  //Y = Observation * J
+  y1.mmult(&ob, &J);
+
+  J.mmult(&trans, &y1);
+
+  long double E = 1.0/y1.sumValues();
+  y1.smult(E);
+
+  long double estimation_probability = y1.highest();
+
+  //this is printing, should be fine
+  cout << std::showpoint << std::fixed << setprecision(12) << estimation_probability;
+  vector<int> biggests;
+
+  for(int z = 0; z < y1.n; z++){
+    for(int x = 0; x < y1.m;  x++){
+      if(y1.cell[x][z] == estimation_probability){
+        biggests.push_back(x);
+      }
+    }
   }
 
+  for(int i = 0; i < biggests.size(); i++){
+    cout << " " << biggests[i];
+  }
+  cout << endl;
 
+  //for the rest of the times
+  for(int i = 1; i < numObservations ;i++){
+    //initialize the observation matrix
+    for(int j = 0; j < trans.n; j++){
+      if(grid->cell[j/(grid->n)][j%grid->n] == 15){
+        ob.cell[j][j] = 0;
+      }
+      else{
+        ob.cell[j][j] = bitDiff[bitComp(grid->cell[j/(grid->n)][j%grid->n], observations[i])];
+      }
+    }
+    y1.mmult(&ob, &J);
+    J.mmult(&trans, &y1);
+
+    long double E = 1.0/y1.sumValues();
+    y1.smult(E);
+
+    long double estimation_probability = y1.highest();
+    
+    cout << std::showpoint << std::fixed << setprecision(12) << estimation_probability;
+    vector<int> biggests;
+
+    for(int z = 0; z < y1.n; z++){
+      for(int x = 0; x < y1.m;  x++){
+        if(y1.cell[x][z] == estimation_probability){
+          biggests.push_back(x);
+        }
+      }
+    }
+
+    for(int i = 0; i < biggests.size(); i++){
+      cout << " " << biggests[i];
+    }
+    cout << endl;
+  }
   return;
 }

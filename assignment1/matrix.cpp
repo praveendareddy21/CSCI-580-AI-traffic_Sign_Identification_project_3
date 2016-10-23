@@ -9,6 +9,26 @@ void matrix::set(int m, int n, int value){
 	cell[m][n] = value;
 }
 
+void matrix::smult(long double x){
+	for(int i = 0; i < m; i++){
+		for(int j = 0; j < n; j++){
+			cell[i][j] *= x;
+		}
+	}
+}
+
+long double matrix::highest(){
+	long double highest = 0;
+	for(int i = 0; i < m; i++){
+		for(int j = 0; j < n; j++){
+			if(cell[i][j] > highest){
+				highest = cell[i][j];
+			}
+		}
+	}
+	return highest;
+}
+
 void matrix::print(){
   for(int i = 0; i < m; i++){
     for(int j = 0; j < n; j++){
@@ -18,31 +38,25 @@ void matrix::print(){
   }
 }
 
-/*
-void RMatrix::CrossProduct(RMatrix aMtx, RMatrix bMtx) {
-  // Local Variable Declaration
-  long double cellTotal = 0;
-
-  // Calculate CrossProduct
-  for(int r = 0; r < aMtx.GetNumberRows(); r++) {
-    for (int c = 0; c < bMtx.GetNumberColumns(); c++) {
-      for (int i = 0; i < aMtx.GetNumberColumns(); i++) {
-        cellTotal += aMtx.GetCellValue(r, i)*bMtx.GetCellValue(i, c);
-      }
-      this->SetCellValue(r, c, cellTotal);
-      cellTotal = 0;
-    }
-  }
-}
-*/
 void matrix::mmult(matrix* m1, matrix* m2){
 	for(int i = 0; i < m1->m; i++){
 		for(int j = 0; j < m2->n; j++){
+				cell[i][j] = 0;
 			for(int k = 0; k < m1->n; k++){
 				cell[i][j] += m1->cell[i][k] * m2->cell[k][j];
 			}
 		}
 	}
+}
+
+long double matrix::sumValues(){
+	long double result = 0;
+	for(int i = 0; i < m; i++){
+		for(int j = 0; j < n; j++){
+			result += cell[i][j];
+		}
+	}
+	return result;
 }
 
 void matrix::fixup(){

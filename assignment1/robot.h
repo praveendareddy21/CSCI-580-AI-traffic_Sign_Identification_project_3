@@ -15,5 +15,7 @@ public:
     numObservations = numObs;
   }
   void process();
+  int bitComp(int, string);
+  int toInt(string);
 };
 #endif
