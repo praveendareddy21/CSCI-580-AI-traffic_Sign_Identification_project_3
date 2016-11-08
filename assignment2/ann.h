@@ -9,11 +9,13 @@ public:
   vector<long double> weights;
   long double aValue;
   long double delta;
+  long double dummy = .01;
 };
 
 class ANN{
 public:
   vector< vector<Node> > network;
+  void train(vector<long double>, int);
 };
 
 #endif

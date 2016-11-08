@@ -2,6 +2,7 @@
 #include <fstream>
 #include <vector>
 #include <sstream>
+#include <iomanip>
 #include "ann.h"
 using namespace std;
 
@@ -48,16 +49,17 @@ int main(int argc, char const *argv[]) {
 
     if(i < myANN.network.size()-1){
       for(int j = 0; j < myANN.network[i].size(); j++){
+        //specify the number of weights LEAVING a given node
         myANN.network[i][j].weights.resize(structure[i+1]);
       }
     }
   }
 
-  int i = 0;
-  string line;
-
+  //open and read then apply the weights to the ANN
   myfile.open(argv[6]);
   if(myfile.is_open()){
+    int i = 0;
+    string line;
 
     while(i < myANN.network.size()-1){
 
@@ -81,6 +83,51 @@ int main(int argc, char const *argv[]) {
     cout << "FILE READ ERROR" << endl;
     exit(1);
   }
+  myfile.close();
+
+  //open and store training set data
+  myfile.open(argv[1]);
+  vector<vector<long double> > inputs(100, vector<long double>(myANN.network[0].size()));
+  if(myfile.is_open()){
+    string line;
+
+    //use getline to get the input lines, then >> for the long doubles
+    for(int i = 0; i < 100; i++){
+      getline(myfile, line);
+      istringstream ss(line);
+      for(int j = 0; j < myANN.network[0].size(); j++){
+        ss >> inputs[i][j];
+      }
+    }
+  }
+
+  else{
+    cout << "FILE READ ERROR" << endl;
+    exit(1);
+  }
+  myfile.close();
+
+  myfile.open(argv[2]);
+  vector<int> labels(100);
+  
+  if(myfile.is_open()){
+    for(int i = 0; i < labels.size(); i++){
+      myfile >> labels[i];
+    }
+  }
+  else{
+    cout << "FILE READ ERROR" << endl;
+    exit(1);
+  }
+  myfile.close();
+
+  //train the ANN
+  for(int i = 0; i < inputs.size(); i++){
+    //run train for each input vector and the associated label
+    myANN.train(inputs[i], labels[i]);
+  }
+
+
 
   return 0;
 }
