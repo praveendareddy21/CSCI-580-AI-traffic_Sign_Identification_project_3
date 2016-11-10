@@ -12,4 +12,16 @@ clean:
 	rm -f *.o ann
 
 tests:
-	echo "feature not yet added"
+	make && feature not yet added
+
+test1:
+	make && ./ann train_input2.txt train_output2.txt test_input2.txt test_output2.txt structure2.txt weights2.txt 100
+
+test2:
+	make && ./ann train_input2.txt train_output2.txt test_input2.txt test_output2.txt structure2.txt weights2.txt 700
+
+test3:
+	make && ./ann train_input2.txt train_output2.txt test_input2.txt test_output2.txt structure2.txt weights2.txt 300
+
+test4:
+	make && ./ann train_input2.txt train_output2.txt test_input2.txt test_output2.txt structure3.txt weights3.txt 100

@@ -14,8 +14,15 @@ public:
 
 class ANN{
 public:
+  ANN(){};
+  ~ANN(){};
   vector< vector<Node> > network;
+  long double aPrime(long double);
+  void feedForward(vector<long double>);
+  int euclid(vector<long double>);
+  void test(vector<long double>, int);
   void train(vector<long double>, int);
+  void print();
 };
 
 #endif
