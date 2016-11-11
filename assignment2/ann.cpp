@@ -1,3 +1,10 @@
+/*
+Matthew Dias
+CSCI 580
+project 2
+ann.cpp
+*/
+
 #include <iostream>
 #include <math.h>
 #include <iomanip>
@@ -14,11 +21,15 @@ static long double ALPHA = 0.01;
   by network[x][y].weights[z] which will evaluate into a long double
 */
 
+//the encoding for the three possible digits that can be recognized by
 static long double digits[3][10] = { {0.1, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9},
                                      {0.9, 0.1, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9},
                                      {0.9, 0.9, 0.1, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9, 0.9} };
 
-
+/*
+Feed forward takes a vector of input nodes and and calculates A values through the nodes until they propagated through
+  the entire network
+*/
 void ANN::feedForward(vector<long double> inputs){
 
   //set the input layer equal to the input vector
@@ -43,10 +54,17 @@ void ANN::feedForward(vector<long double> inputs){
   }
 }
 
+/*
+aprime returns the input * (1 - itself)
+  this is just for convenience and readability
+*/
 long double ANN::aPrime(long double aVal){
   return aVal*(1-aVal);
 }
 
+/*
+  Euclid takes a vector from the Avalues of the output layer, and determines the digit most closely represented by those values
+*/
 int ANN::euclid(vector<long double> outputs){
   long double euc0 = sqrtl(powl((digits[0][0] - outputs[0]),2) + powl((digits[0][1] - outputs[1]),2) + powl((digits[0][2] - outputs[2]),2) );
   long double euc1 = sqrtl(powl((digits[1][0] - outputs[0]),2) + powl((digits[1][1] - outputs[1]),2) + powl((digits[1][2] - outputs[2]),2) );
@@ -77,6 +95,10 @@ int ANN::euclid(vector<long double> outputs){
   }
 }
 
+/*
+  Test takes an a vector with a value for each input layer node and propagates it through the ANN until the output layer
+  it then uses euclid to determine the most likely digit 0, 1, or 2 and return that value
+*/
 int ANN::test(vector<long double> inputs){
   feedForward(inputs);
   int outputLayer = network.size()-1;
@@ -87,6 +109,10 @@ int ANN::test(vector<long double> inputs){
   return euclid(output_values);
 }
 
+/*
+  Train takes a vector with a value for each input layer node and propagates it through the ANN, it then calculates error between
+the expected outputs and actual outputs and adjust the netwrok's weights accordingly
+*/
 void ANN::train(vector<long double> inputs, int label){
 
   feedForward(inputs);
@@ -145,6 +171,9 @@ void ANN::train(vector<long double> inputs, int label){
   }
 }
 
+/*
+  print outputs the weights of all the paths from node 0 in layer 0 to every node in layer 1
+*/
 void ANN::print(){
   cout << showpoint << fixed << setprecision(12);
     for(int k = 0; k < network[0][0].weights.size(); k++){

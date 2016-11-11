@@ -1,3 +1,11 @@
+/*
+Matthew Dias
+CSCI 580
+ann.h
+
+Header file describing the functions and declaring member variables for the ANN class
+*/
+
 #ifndef MATRIX_H
 #define MATRIX_H
 #include <vector>

@@ -1,3 +1,11 @@
+/*
+Matthew Dias
+CSCI 580
+main.cpp
+
+  initializes and simulates the functionality of a nueral network
+*/
+
 #include <iostream>
 #include <fstream>
 #include <vector>
