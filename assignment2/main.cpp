@@ -166,11 +166,20 @@ int main(int argc, char const *argv[]) {
   }
   myfile.close();
 
+vector<int> classified = vector<int>(inputs.size());
+
 for(int i = 0; i < inputs.size(); i++){
-  myANN->test(inputs[i], labels[i]);
-  break;
+  classified[i] = myANN->test(inputs[i]);
 }
-  //TODO: put it through feedForward, euclid for classification, and calculate accuracy
+
+long double correct = 0;
+for(int i = 0; i < inputs.size(); i++){
+  if(classified[i] == labels[i]){
+    correct++;
+  }
+}
+
+cout << correct/(long double)classified.size() << endl;
 
   delete(myANN);
 

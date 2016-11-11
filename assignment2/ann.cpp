@@ -48,24 +48,43 @@ long double ANN::aPrime(long double aVal){
 }
 
 int ANN::euclid(vector<long double> outputs){
-  long double euc1 = 0;
-  long double euc2 = 0;
-  long double euc3 = 0;
-  euc1 = sqrtl( (outputs[0]-digits[0][0]) + (outputs[1]-digits[0][1])+ (outputs[2]-digits[0][2])  );
-  euc2 = sqrtl( (outputs[0]-digits[1][0]) + (outputs[1]-digits[1][1])+ (outputs[2]-digits[1][2])  );
-  euc3 = sqrtl( (outputs[0]-digits[2][0]) + (outputs[1]-digits[2][1])+ (outputs[2]-digits[2][2])  );
+  long double euc0 = sqrtl(powl((digits[0][0] - outputs[0]),2) + powl((digits[0][1] - outputs[1]),2) + powl((digits[0][2] - outputs[2]),2) );
+  long double euc1 = sqrtl(powl((digits[1][0] - outputs[0]),2) + powl((digits[1][1] - outputs[1]),2) + powl((digits[1][2] - outputs[2]),2) );
+  long double euc2 = sqrtl(powl((digits[2][0] - outputs[0]),2) + powl((digits[2][1] - outputs[1]),2) + powl((digits[2][2] - outputs[2]),2) );
 
-  if(euc1 > euc2 && euc1 > euc3){return 0;}
-  else if(euc2 > euc1 && euc2 > euc3){return 1;}
-  else{return 2;}
+  long double lowest = 100;
+  if(euc2 < lowest){
+    lowest = euc2;
+  }
+  if(euc1 < lowest){
+    lowest = euc1;
+  }
+  if(euc0 < lowest){
+    lowest = euc0;
+  }
+
+  if(lowest == euc0){
+    cout << "0" << endl;
+    return 0;
+  }
+  else if(lowest == euc1){
+    cout << "1" << endl;
+    return 1;
+  }
+  else{
+    cout << "2" << endl;
+    return 2;
+  }
 }
 
-void ANN::test(vector<long double> inputs, int label){
+int ANN::test(vector<long double> inputs){
   feedForward(inputs);
   int outputLayer = network.size()-1;
+  vector<long double> output_values = vector<long double>(network[outputLayer].size());
   for(int i = 0; i < network[outputLayer].size(); i++){
-    cout << euclid(network[outputLayer]) << endl;
+    output_values[i] = network[outputLayer][i].aValue;
   }
+  return euclid(output_values);
 }
 
 void ANN::train(vector<long double> inputs, int label){

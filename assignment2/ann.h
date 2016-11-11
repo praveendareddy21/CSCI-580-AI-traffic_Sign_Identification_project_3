@@ -20,7 +20,7 @@ public:
   long double aPrime(long double);
   void feedForward(vector<long double>);
   int euclid(vector<long double>);
-  void test(vector<long double>, int);
+  int test(vector<long double>);
   void train(vector<long double>, int);
   void print();
 };
