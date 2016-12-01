@@ -12,7 +12,7 @@
 
 using namespace std;
 
-typedef double prob;
+typedef long double prob;
 
 class ANN {
 public:

@@ -13,7 +13,7 @@
 #include "ann.h"
 
 #define MIN_ARGS 7
-#define ALPHA 0.01
+#define ALPHA 1.0
 
 using namespace std;
 
@@ -24,7 +24,7 @@ vector<vector<prob> > matrixFromInput(istream *input, int rows, int cols) {
         vector<prob>row;
         for (int j = 0; j < cols; j++) {
             *input >> buff;
-            row.push_back(buff);
+            row.push_back(buff/256.0);
         }
         matrix.push_back(row);
     }
@@ -55,7 +55,7 @@ int main(int argc, char const *argv[]) {
     vector<vector<vector<prob> > >weights;
     for (unsigned long i = 0; i < layerSizes.size() - 1; i++) {
         //weights.push_back(matrixFromInput(&weight_file, layerSizes[i], layerSizes[i+1]));
-        weights.push_back(vector<vector<prob> >(layerSizes[i], vector<prob>(layerSizes[i+1], 0.5)));
+        weights.push_back(vector<vector<prob> >(layerSizes[i], vector<prob>(layerSizes[i+1], 0.001)));
     }
 
     // Created the ANN with the given weights (automatically knows structure based on weights)
@@ -77,7 +77,10 @@ int main(int argc, char const *argv[]) {
 
     
     // Train ANN with training data k times
-    for (int i = 0; i < atoi(argv[7]); i++) {
+    int max = atoi(argv[MIN_ARGS-1]);
+    for (int i = 0; i < max; i++) {
+        cout << (int)(100 * (float)i/max) << "%%    \r";
+        fflush(stdout);
         for (unsigned long j = 0; j < trainInput.size(); j++) {
             ann->train(trainInput[j], ann->encodings[trainOutput[j]]);
         }
@@ -99,12 +102,12 @@ int main(int argc, char const *argv[]) {
     test_input_file.open(argv[3]);
     vector<vector<prob> >testInput = matrixFromInput(&test_input_file, (int)testOutput.size(), layerSizes[0]);
     
-    ann->printFirstWeights();
+    // ann->printFirstWeights();
     
     prob corrects = 0;
     for (unsigned long i = 0; i < testInput.size(); i++) {
         int digit = ann->classify(testInput[i]);
-        cout << digit << endl;
+        // cout << digit << endl;
         corrects += digit == testOutput[i];
     }
     cout << (prob)corrects/(prob)testOutput.size() << endl;

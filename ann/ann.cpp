@@ -66,9 +66,9 @@ ANN::ANN(vector<vector<vector<prob> > >weights, prob alpha) {
 
     // Let's set the encodings for the digits (the ANN is set to recognize as many digits as there are output nodes)
     unsigned long outputSize = this->layers[this->layers.size() - 1].size() - 1;
-    encodings = vector<vector<prob> >(outputSize, vector<prob>(outputSize, 0.9));
+    encodings = vector<vector<prob> >(outputSize, vector<prob>(outputSize, 0.1));
     for (int i = 0; i < outputSize; i++) {
-        encodings[i][i] = 0.1;
+        encodings[i][i] = .9;
     }
 
     // Finally let's set the learning constant
@@ -92,7 +92,7 @@ ANN::~ANN() {
  * @return sigmoid(input)
  */
 prob ANN::sigmoid(prob input) {
-    return (prob)1.0/((prob)1.0+exp(-input));
+    return (prob)1.0/((prob)1.0+expl(-input));
 }
 
 void ANN::sigmoid(vector<prob> &input) {
@@ -401,7 +401,7 @@ vector<prob> ANN::dotTranspose(const vector<vector<prob> >&matrix, const vector<
 void ANN::print(const vector<prob>&vector) {
     printf("\n");
     for (int i = 0; i < vector.size(); i++) {
-        printf("%f\t", vector[i]);
+        printf("%Lf\t", vector[i]);
         printf("\n");
     }
     printf("\n");
@@ -415,7 +415,7 @@ void ANN::print(const vector<vector<prob> >&matrix) {
     printf("\n");
     for (int i = 0; i < matrix.size(); i++) {
         for (int j = 0; j < matrix[0].size(); j++) {
-            printf("%f\t", matrix[i][j]);
+            printf("%Lf\t", matrix[i][j]);
         }
         printf("\n");
     }
