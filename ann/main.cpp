@@ -31,6 +31,34 @@ vector<vector<prob> > matrixFromInput(istream *input, int rows, int cols) {
     return matrix;
 }
 
+prob accuracy(ANN* ann, const char* input_file_name, int input_layer_size, const char* output_file_name) {
+
+    // Read test output
+    ifstream test_output_file;
+    test_output_file.open(output_file_name);
+    vector<int>testOutput;
+    int intbuff;
+    while(test_output_file >> intbuff) {
+        testOutput.push_back(intbuff);
+    }
+    
+    // Read test input
+    ifstream test_input_file;
+    test_input_file.open(input_file_name);
+    vector<vector<prob> >testInput = matrixFromInput(&test_input_file, (int)testOutput.size(), input_layer_size);
+    
+
+    // Calculate accuracy
+    prob corrects = 0;
+    for (unsigned long i = 0; i < testInput.size(); i++) {
+        int digit = ann->classify(testInput[i]);
+        // cout << digit << endl;
+        corrects += digit == testOutput[i];
+    }
+
+   return (prob)corrects/(prob)testOutput.size();
+}
+
 int main(int argc, char const *argv[]) {
     // User input verification
     if (argc < MIN_ARGS) {
@@ -55,7 +83,7 @@ int main(int argc, char const *argv[]) {
     vector<vector<vector<prob> > >weights;
     for (unsigned long i = 0; i < layerSizes.size() - 1; i++) {
         //weights.push_back(matrixFromInput(&weight_file, layerSizes[i], layerSizes[i+1]));
-        weights.push_back(vector<vector<prob> >(layerSizes[i], vector<prob>(layerSizes[i+1], 0.001)));
+        weights.push_back(vector<vector<prob> >(layerSizes[i], vector<prob>(layerSizes[i+1], .5/layerSizes[i+1])));
     }
 
     // Created the ANN with the given weights (automatically knows structure based on weights)
@@ -78,8 +106,12 @@ int main(int argc, char const *argv[]) {
     
     // Train ANN with training data k times
     int max = atoi(argv[MIN_ARGS-1]);
+    cout << "Iters\tAccuracy" << endl;
     for (int i = 0; i < max; i++) {
-        cout << (int)(100 * (float)i/max) << "%%    \r";
+        if (i % 1 == 0) {
+            cout << "                                   \r" << i << "\t" << accuracy(ann, argv[3], layerSizes[0], argv[4]) << endl;
+        }
+        cout << (int)(100 * (float)i/max) << "%    \r";
         fflush(stdout);
         for (unsigned long j = 0; j < trainInput.size(); j++) {
             ann->train(trainInput[j], ann->encodings[trainOutput[j]]);
@@ -87,30 +119,7 @@ int main(int argc, char const *argv[]) {
     }
 
     // Test
-    
-    // Read test output
-    ifstream test_output_file;
-    test_output_file.open(argv[4]);
-    vector<int>testOutput;
-    int intbuff;
-    while(test_output_file >> intbuff) {
-        testOutput.push_back(intbuff);
-    }
-    
-    // Read test input
-    ifstream test_input_file;
-    test_input_file.open(argv[3]);
-    vector<vector<prob> >testInput = matrixFromInput(&test_input_file, (int)testOutput.size(), layerSizes[0]);
-    
-    // ann->printFirstWeights();
-    
-    prob corrects = 0;
-    for (unsigned long i = 0; i < testInput.size(); i++) {
-        int digit = ann->classify(testInput[i]);
-        // cout << digit << endl;
-        corrects += digit == testOutput[i];
-    }
-    cout << (prob)corrects/(prob)testOutput.size() << endl;
+    cout << accuracy(ann, argv[3], layerSizes[0], argv[4]) << endl;
     
     return 0;
 }
