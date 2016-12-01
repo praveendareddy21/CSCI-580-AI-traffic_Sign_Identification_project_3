@@ -1,0 +1,7 @@
+runtest 1
+echo ""
+runtest 2
+echo ""
+runtest 3
+echo ""
+runtest 4

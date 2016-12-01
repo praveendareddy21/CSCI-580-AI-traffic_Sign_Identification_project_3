@@ -1,0 +1,19 @@
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+echo "TEST $1:$(cat tests/t0$1.cmd)"
+echo "OUTPUT"
+echo "======"
+ann $(cat tests/t0$1.cmd) > tests/t0$1.myout
+cat tests/t0$1.myout
+echo "======"
+if [ "$(diff tests/t0$1.myout tests/t0$1.out)" == "" ]
+    then
+    echo "${GREEN}test $1 PASSED!${NC}"
+else
+    echo "${RED}test $1 FAILED!${NC}"
+    echo "EXPECTED"
+    echo "========"
+    cat tests/t0$1.out
+fi
