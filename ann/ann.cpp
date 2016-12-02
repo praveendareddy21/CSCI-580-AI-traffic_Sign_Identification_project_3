@@ -7,7 +7,6 @@
 #include "ann.h"
 #include <assert.h>     /* assert */
 
-
 #define DEFAULT_BIAS 0.01
 
 //TODO: rebuild using reference semantics and pointers because value types are too slow
@@ -28,7 +27,7 @@ ANN::ANN(vector<vector<vector<prob> > >weights, prob alpha) {
     this->layers.reserve(weights.size() + 1);
     this->errors.reserve(weights.size() + 1);
     // Copy over the weight matrices, adding bias weights
-    for (int i = 0; i < weights.size(); i++) {
+    for (unsigned long i = 0; i < weights.size(); i++) {
         unsigned long rows = weights[i].size();
         unsigned long cols = weights[i][0].size();
         // This means add a row of bias weights to each weight matrix
@@ -37,7 +36,7 @@ ANN::ANN(vector<vector<vector<prob> > >weights, prob alpha) {
         // For each layer of weights, the bias row must be of the same width as the 
         vector<prob>row;
         row.reserve(cols);
-        for (int j = 0; j < cols; j++) {
+        for (unsigned long j = 0; j < cols; j++) {
             row.push_back(DEFAULT_BIAS);
         }
         layer.push_back(row);
@@ -54,7 +53,7 @@ ANN::ANN(vector<vector<vector<prob> > >weights, prob alpha) {
     // Create error nodes
     errors.push_back(vector<prob>(weights[0].size()));
     
-    for (int i = 0; i < weights.size(); i++) {
+    for (unsigned long i = 0; i < weights.size(); i++) {
         // Need to add bias to each layer so set them to be 1 larger than input info
         vector<prob>layer(weights[i][0].size() + 1);
         // Set bias node to 1
@@ -67,7 +66,7 @@ ANN::ANN(vector<vector<vector<prob> > >weights, prob alpha) {
     // Let's set the encodings for the digits (the ANN is set to recognize as many digits as there are output nodes)
     unsigned long outputSize = this->layers[this->layers.size() - 1].size() - 1;
     encodings = vector<vector<prob> >(outputSize, vector<prob>(outputSize, 0.1));
-    for (int i = 0; i < outputSize; i++) {
+    for (unsigned long i = 0; i < outputSize; i++) {
         encodings[i][i] = .9;
     }
 
@@ -96,7 +95,7 @@ prob ANN::sigmoid(prob input) {
 }
 
 void ANN::sigmoid(vector<prob> &input) {
-    for (int i = 0; i < input.size(); i++) {
+    for (unsigned long i = 0; i < input.size(); i++) {
         input[i] = sigmoid(input[i]);
     }
 }
@@ -126,7 +125,7 @@ prob ANN::sigmoidPrime(prob input) {
  */
 vector<prob> ANN::sigmoidPrime(const vector<prob> &input) {
     vector<prob>result(input.size());
-    for (int i = 0; i < input.size(); i++) {
+    for (unsigned long i = 0; i < input.size(); i++) {
         result[i] = sigmoidPrime(input[i]);
     }
     return result;
@@ -144,14 +143,17 @@ void ANN::feedForward(const vector<prob> &input) {
     // Set input layer values
     // Insert input vector
     //layers[0].insert(layers[0].begin() + 1, input.begin(), input.end());
-    for (int i = 0; i < input.size(); i++) {
+    for (unsigned long i = 0; i < input.size(); i++) {
         layers[0][i+1] = input[i];
     }
     // Run feedforward
-    for (int i = 0; i < weights.size(); i++) {
+    for (unsigned long i = 0; i < weights.size(); i++) {
+        // cblas_dgemv
+        unsigned long m = weights[i].size();
+        unsigned long n = weights[i][0].size(); 
         vector<prob>result = dotTranspose(weights[i], layers[i]);
         sigmoid(result);
-        for (int j = 0; j < result.size(); j++) {
+        for (unsigned long j = 0; j < result.size(); j++) {
             layers[i+1][j+1] = result[j];
         }
         //layers[i+1].insert(layers[i+1].begin() + 1, result.begin(), result.end());
@@ -175,9 +177,9 @@ vector<prob> ANN::output() {
 int ANN::classify(const vector<prob> &input) {
     feedForward(input);
     prob min = 100.0; // Should be enough for a vector of size 10,000
-    int digit = -1;
+    unsigned long digit = -1;
     vector<prob>out = output();
-    for (int i = 0; i < encodings.size(); i++) {
+    for (unsigned long i = 0; i < encodings.size(); i++) {
         prob dist = euclideanDist(encodings[i], out);
         if (dist < min) {
             min = dist;
@@ -213,7 +215,7 @@ vector<prob> ANN::omitDummy(const vector<prob> &input) {
 vector<prob> ANN::error(const vector<prob> &output, const vector<prob> &expectedOutput) {
     // assert(output.size() == expectedOutput.size());
     vector<prob>error(output.size());
-    for (int i = 0; i < output.size(); i++) {
+    for (unsigned long i = 0; i < output.size(); i++) {
         error[i] = sigmoidPrime(output[i]) * (expectedOutput[i] - output[i]);
     }
     return error;
@@ -230,6 +232,8 @@ void ANN::backPropagate(const vector<prob> &expectedOutput) {
     errors[lastLayer] = error(out, expectedOutput);
     // Run backpropagation
     for(unsigned long i = lastLayer - 1; i > 0; i--) {
+        // cblas_dgemv (dot)
+        // cblas_dscal (multiply)
         errors[i] = omitDummy(multiply(sigmoidPrime(layers[i]), dot(weights[i], errors[i+1])));
     }
 }
@@ -238,7 +242,8 @@ void ANN::backPropagate(const vector<prob> &expectedOutput) {
  * Adjusts the new weights according the the backpropagated errors and commits them to the network
  */
 void ANN::commit() {
-    for (int i = 0; i < weights.size(); i++) {
+    for (unsigned long i = 0; i < weights.size(); i++) {
+        // cblas_dger
         outerProductAddMultiply(weights[i], layers[i], errors[i+1], alpha);
     }
 }
@@ -268,7 +273,7 @@ void ANN::train(const vector<prob> &input, const vector<prob> &output) {
 prob ANN::euclideanDist(const vector<prob> &left, const vector<prob> &right) {
     // assert(left.size() == right.size());
     prob dist = 0;
-    for (int i = 0; i < left.size(); i++) {
+    for (unsigned long i = 0; i < left.size(); i++) {
         dist += powl(left[i] - right[i], 2);
     }
     return powl(dist, 0.5);
@@ -285,7 +290,7 @@ prob ANN::euclideanDist(const vector<prob> &left, const vector<prob> &right) {
 vector<prob> ANN::multiply(const vector<prob> &left, const vector<prob> &right) {
     // assert(left.size() == right.size());
     vector<prob>result(left.size());
-    for (int i = 0; i < left.size(); i++) {
+    for (unsigned long i = 0; i < left.size(); i++) {
         result[i] = left[i] * right[i];
     }
     return result;
@@ -294,12 +299,14 @@ vector<prob> ANN::multiply(const vector<prob> &left, const vector<prob> &right) 
 /**
  * Performs scalar multiplication on all elements of a vector
  *
+ * @see cblas_dscal
+ *
  * @param vec the vector
  * @param factor the factor by which to multiply
  * @return the multiplied vector
  */
 void ANN::multiply(vector<prob> &vec, prob factor) {
-    for (int i = 0; i < vec.size(); i++) {
+    for (unsigned long i = 0; i < vec.size(); i++) {
         vec[i] = vec[i] * factor;
     }
 }
@@ -311,14 +318,17 @@ void ANN::multiply(vector<prob> &vec, prob factor) {
  *
  * This function was bulit off of an original outerProduct function 
  * but a multiplication and in place summation were added to reduce malloc and free calls and improve performance
+ *
+ * @see cblas_dger
+ * 
  * @param output the output matrix to add to
  * @param left the left vector (u) to multiply
  * @param right the right vector (v) to multiply
  * @param alpha the factor to multiply by
  */
 void ANN::outerProductAddMultiply(vector<vector<prob> >&output, const vector<prob>&left, const vector<prob> &right, prob alpha) {
-    for (int i = 0; i < left.size(); i++) {
-        for(int j = 0; j < right.size(); j++) {
+    for (unsigned long i = 0; i < left.size(); i++) {
+        for (unsigned long j = 0; j < right.size(); j++) {
             output[i][j] += left[i] * right[j] * alpha;
         }
     }
@@ -336,8 +346,8 @@ void ANN::outerProductAddMultiply(vector<vector<prob> >&output, const vector<pro
  */
 void ANN::add(vector<vector<prob> > &left, const vector<vector<prob> > &right) {
     assert(left.size() == right.size());
-    for (int i = 0; i < left.size(); i++) {
-        for (int j = 0; j < left[0].size(); j++) {
+    for (unsigned long i = 0; i < left.size(); i++) {
+        for (unsigned long j = 0; j < left[0].size(); j++) {
             left[i][j] += right[i][j];
         }
     }
@@ -346,6 +356,8 @@ void ANN::add(vector<vector<prob> > &left, const vector<vector<prob> > &right) {
 
 /**
  * Performs a matrix multiplication operation on a matrix and a vector
+ *
+ * @see cblas_dgemv
  *
  * @param matrix the matrix to multiply (left operand)
  * @param vec the vector to multiply (right operand)
@@ -356,9 +368,9 @@ vector<prob> ANN::dot(const vector<vector<prob> >&matrix, const vector<prob>&vec
     unsigned long cols = matrix[0].size();
     // assert(cols == vec.size());
     vector<prob>result(rows);
-    for (int i = 0; i < rows; i++) {
+    for (unsigned long i = 0; i < rows; i++) {
         prob sum = 0;
-        for (int j = 0; j < cols; j++) {
+        for (unsigned long j = 0; j < cols; j++) {
             sum += matrix[i][j] * vec[j];
         }
         result[i] = sum;
@@ -366,11 +378,12 @@ vector<prob> ANN::dot(const vector<vector<prob> >&matrix, const vector<prob>&vec
     return result;
 }
 
-
 /**
  * Performs a matrix multiplication operation on a tranposed matrix and a vector
  *
  * This is the same as dot() but it iterates over colums->rows instead of rows->columns
+ *
+ * @see cblas_dgemv
  *
  * @param matrix the matrix to multiply (left operand)
  * @param vec the vector to multiply (right operand)
@@ -382,9 +395,9 @@ vector<prob> ANN::dotTranspose(const vector<vector<prob> >&matrix, const vector<
     // assert(rows == vec.size());
     vector<prob>result(cols);
     // returns a matrix the size of this->rows() * right->cols()
-    for (int i = 0; i < cols; i++) {
+    for (unsigned long i = 0; i < cols; i++) {
         prob sum = 0;
-        for (int j = 0; j < rows; j++) {
+        for (unsigned long j = 0; j < rows; j++) {
             sum += matrix[j][i] * vec[j];
         }
         result[i] = sum;
@@ -392,7 +405,9 @@ vector<prob> ANN::dotTranspose(const vector<vector<prob> >&matrix, const vector<
     return result;
 }
 
-
+void ANN::visualizeEncodings() {
+    // Trickery here....
+}
 
 /**
  * Prints a vector description to the console
@@ -400,8 +415,8 @@ vector<prob> ANN::dotTranspose(const vector<vector<prob> >&matrix, const vector<
  */
 void ANN::print(const vector<prob>&vector) {
     printf("\n");
-    for (int i = 0; i < vector.size(); i++) {
-        printf("%Lf\t", vector[i]);
+    for (unsigned long i = 0; i < vector.size(); i++) {
+        printf("%f\t", vector[i]);
         printf("\n");
     }
     printf("\n");
@@ -413,9 +428,9 @@ void ANN::print(const vector<prob>&vector) {
  */
 void ANN::print(const vector<vector<prob> >&matrix) {
     printf("\n");
-    for (int i = 0; i < matrix.size(); i++) {
-        for (int j = 0; j < matrix[0].size(); j++) {
-            printf("%Lf\t", matrix[i][j]);
+    for (unsigned long i = 0; i < matrix.size(); i++) {
+        for (unsigned long j = 0; j < matrix[0].size(); j++) {
+            printf("%f\t", matrix[i][j]);
         }
         printf("\n");
     }
@@ -428,7 +443,7 @@ void ANN::print(const vector<vector<prob> >&matrix) {
  */
 void ANN::printFirstWeights() {
     cout << showpoint << fixed << setprecision(12);
-    for (int i = 0; i < weights[0][1].size(); i++) {
+    for (unsigned long i = 0; i < weights[0][1].size(); i++) {
         cout << weights[0][1][i] << " ";
     }
     cout << endl;

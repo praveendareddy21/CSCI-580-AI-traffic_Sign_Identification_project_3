@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D2AE83B91DF13FFA00F63876 /* libopenblas_haswellp-r0.2.18.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2AE83B81DF13FFA00F63876 /* libopenblas_haswellp-r0.2.18.a */; };
 		D2F1F4501DF00C810031F5AF /* ann.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2F1F44D1DF00C810031F5AF /* ann.cpp */; };
 		D2F1F4511DF00C810031F5AF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D2F1F44F1DF00C810031F5AF /* main.cpp */; };
 /* End PBXBuildFile section */
@@ -24,6 +25,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D2AE83B21DF13EB100F63876 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		D2AE83B41DF13EFA00F63876 /* libopenblas_haswellp-r0.2.18.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libopenblas_haswellp-r0.2.18.dylib"; path = "../../../../../../../../../usr/local/Cellar/openblas/0.2.18_2/lib/libopenblas_haswellp-r0.2.18.dylib"; sourceTree = "<group>"; };
+		D2AE83B61DF13F3700F63876 /* cblas.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = cblas.h; path = ../../../../../../../../../usr/local/Cellar/openblas/0.2.18_2/include/cblas.h; sourceTree = "<group>"; };
+		D2AE83B81DF13FFA00F63876 /* libopenblas_haswellp-r0.2.18.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libopenblas_haswellp-r0.2.18.a"; path = "../../../../../../../../../usr/local/Cellar/openblas/0.2.18_2/lib/libopenblas_haswellp-r0.2.18.a"; sourceTree = "<group>"; };
 		D2F1F4431DF00C410031F5AF /* ann */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ann; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2F1F44D1DF00C810031F5AF /* ann.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ann.cpp; sourceTree = SOURCE_ROOT; };
 		D2F1F44E1DF00C810031F5AF /* ann.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ann.h; sourceTree = SOURCE_ROOT; };
@@ -35,17 +40,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2AE83B91DF13FFA00F63876 /* libopenblas_haswellp-r0.2.18.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D2AE83B11DF13EB100F63876 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D2AE83B81DF13FFA00F63876 /* libopenblas_haswellp-r0.2.18.a */,
+				D2AE83B61DF13F3700F63876 /* cblas.h */,
+				D2AE83B41DF13EFA00F63876 /* libopenblas_haswellp-r0.2.18.dylib */,
+				D2AE83B21DF13EB100F63876 /* Accelerate.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D2F1F43A1DF00C410031F5AF = {
 			isa = PBXGroup;
 			children = (
 				D2F1F4451DF00C410031F5AF /* ann */,
 				D2F1F4441DF00C410031F5AF /* Products */,
+				D2AE83B11DF13EB100F63876 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -224,6 +242,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 62PG532H9N;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/openblas/0.2.18_2/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -232,6 +254,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 62PG532H9N;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/openblas/0.2.18_2/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

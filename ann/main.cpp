@@ -13,7 +13,7 @@
 #include "ann.h"
 
 #define MIN_ARGS 7
-#define ALPHA 1.0
+#define ALPHA .1
 
 using namespace std;
 
@@ -32,7 +32,6 @@ vector<vector<prob> > matrixFromInput(istream *input, int rows, int cols) {
 }
 
 prob accuracy(ANN* ann, const char* input_file_name, int input_layer_size, const char* output_file_name) {
-
     // Read test output
     ifstream test_output_file;
     test_output_file.open(output_file_name);
@@ -41,22 +40,59 @@ prob accuracy(ANN* ann, const char* input_file_name, int input_layer_size, const
     while(test_output_file >> intbuff) {
         testOutput.push_back(intbuff);
     }
-    
+    int output_layer_size = (int)testOutput.size();
     // Read test input
     ifstream test_input_file;
     test_input_file.open(input_file_name);
-    vector<vector<prob> >testInput = matrixFromInput(&test_input_file, (int)testOutput.size(), input_layer_size);
+    vector<vector<prob> >testInput = matrixFromInput(&test_input_file, output_layer_size, input_layer_size);
     
 
+
     // Calculate accuracy
+    vector<int>output_errors = vector<int>(output_layer_size, 0);
+    vector<int>output_correct = vector<int>(output_layer_size, 0);
+    vector<int>classifications;
     prob corrects = 0;
+    cout << "---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n";
     for (unsigned long i = 0; i < testInput.size(); i++) {
         int digit = ann->classify(testInput[i]);
-        // cout << digit << endl;
-        corrects += digit == testOutput[i];
+        cout << testOutput[i] << " ";
+        classifications.push_back(digit);
+        int correct = digit == testOutput[i];
+        if (correct) {
+            output_correct[testOutput[i]]++;
+        } else {
+            output_errors[testOutput[i]]++;
+        }
+        corrects += correct;
     }
+    cout << endl;
 
-   return (prob)corrects/(prob)testOutput.size();
+
+    for (unsigned long i = 0; i < classifications.size(); i++) {
+        cout << classifications[i] << " ";
+    }
+    cout << endl;
+/*
+    cout << "Classes\t";
+    for (unsigned long i; i < output_layer_size; i++) {
+        cout << i << "\t";
+    }
+    cout << endl;
+
+    cout << "Correct\t";
+    for (unsigned long i; i < output_layer_size; i++) {
+        cout << output_correct[i] << "\t";
+    }
+    cout << endl;
+
+    cout << "Errors\t";
+    for (unsigned long i; i < output_layer_size; i++) {
+        cout << output_errors[i] << "\t";
+    }
+    cout << endl;
+*/
+    return (prob)corrects/(prob)testOutput.size();
 }
 
 int main(int argc, char const *argv[]) {
@@ -106,12 +142,14 @@ int main(int argc, char const *argv[]) {
     
     // Train ANN with training data k times
     int max = atoi(argv[MIN_ARGS-1]);
-    cout << "Iters\tAccuracy" << endl;
-    for (int i = 0; i < max; i++) {
-        if (i % 1 == 0) {
-            cout << "                                   \r" << i << "\t" << accuracy(ann, argv[3], layerSizes[0], argv[4]) << endl;
-        }
-        cout << (int)(100 * (float)i/max) << "%    \r";
+    // cout << "Iters\tAccuracy" << endl;
+    int i;
+    for (i = 0; i < max; i++) {
+        accuracy(ann, argv[3], layerSizes[0], argv[4]);
+        /*if (i % 1 == 0) {
+            //cout << "                                   \r" << i << "\t" << accuracy(ann, argv[3], layerSizes[0], argv[4]) << endl;
+        }*/
+        // cout << (int)(100 * (float)i/max) << "%    \r";
         fflush(stdout);
         for (unsigned long j = 0; j < trainInput.size(); j++) {
             ann->train(trainInput[j], ann->encodings[trainOutput[j]]);
@@ -119,7 +157,7 @@ int main(int argc, char const *argv[]) {
     }
 
     // Test
-    cout << accuracy(ann, argv[3], layerSizes[0], argv[4]) << endl;
+    // cout << i << "   \t" << accuracy(ann, argv[3], layerSizes[0], argv[4]) << endl;
     
     return 0;
 }

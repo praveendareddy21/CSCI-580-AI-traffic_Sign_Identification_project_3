@@ -10,9 +10,10 @@
 #include <iostream>
 #include <iomanip>
 
+
 using namespace std;
 
-typedef long double prob;
+typedef double prob;
 
 class ANN {
 public:
@@ -20,6 +21,7 @@ public:
     ~ANN();
     void train(const vector<prob> &input, const vector<prob> &output);
     void feedForward(const vector<prob> &input); // Feeds the neural net (calculates)
+    void visualizeEncodings(); // Computes input values for "perfect" image
     void backPropagate(const vector<prob> &expectedOutput); // Back propagates the errors
     vector<prob> output(); // Returns the current values of the output layer (excluding possible bias node)
     int classify(const vector<prob>& input); // Classifies the output using euclidean distance
