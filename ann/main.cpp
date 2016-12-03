@@ -10,12 +10,17 @@
 #include <istream>
 #include <ostream>
 #include <stdlib.h>     /* atoi */
+#include <algorithm>
 #include "ann.h"
 
 #define MIN_ARGS 7
-#define ALPHA .1
+#define ALPHA 1.0
+
+#define PRINT_ACCU true
 
 using namespace std;
+
+bool print_cmp = false;
 
 vector<vector<prob> > matrixFromInput(istream *input, int rows, int cols) {
     vector<vector<prob> >matrix;
@@ -47,17 +52,22 @@ prob accuracy(ANN* ann, const char* input_file_name, int input_layer_size, const
     vector<vector<prob> >testInput = matrixFromInput(&test_input_file, output_layer_size, input_layer_size);
     
 
-
     // Calculate accuracy
     vector<int>output_errors = vector<int>(output_layer_size, 0);
     vector<int>output_correct = vector<int>(output_layer_size, 0);
     vector<int>classifications;
     prob corrects = 0;
-    cout << "---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n";
+    if (print_cmp) {
+        cout << "---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n";
+        
+    }
     for (unsigned long i = 0; i < testInput.size(); i++) {
         int digit = ann->classify(testInput[i]);
-        cout << testOutput[i] << " ";
-        classifications.push_back(digit);
+        if (print_cmp) {
+            cout << testOutput[i] << " ";
+            classifications.push_back(digit);    
+        }
+        
         int correct = digit == testOutput[i];
         if (correct) {
             output_correct[testOutput[i]]++;
@@ -66,13 +76,16 @@ prob accuracy(ANN* ann, const char* input_file_name, int input_layer_size, const
         }
         corrects += correct;
     }
-    cout << endl;
-
-
-    for (unsigned long i = 0; i < classifications.size(); i++) {
-        cout << classifications[i] << " ";
+    if (print_cmp) {
+        cout << endl;
+            for (unsigned long i = 0; i < classifications.size(); i++) {
+            cout << classifications[i] << " ";
+        }
+        cout << endl;
     }
-    cout << endl;
+
+
+    
 /*
     cout << "Classes\t";
     for (unsigned long i; i < output_layer_size; i++) {
@@ -98,8 +111,14 @@ prob accuracy(ANN* ann, const char* input_file_name, int input_layer_size, const
 int main(int argc, char const *argv[]) {
     // User input verification
     if (argc < MIN_ARGS) {
-        printf("Usage: ann <train_input> <train_output> <test_input> <test_output> <structure> <k>\n");
+        printf("Usage: ann <train_input> <train_output> <test_input> <test_output> <structure> <k> [-comp]\n");
         return 1;
+    }
+
+    if (argc > MIN_ARGS) {
+        if (!strcmp("-comp", argv[MIN_ARGS])) {
+            print_cmp = true;
+        }   
     }
     
     ifstream structure;
@@ -141,23 +160,32 @@ int main(int argc, char const *argv[]) {
 
     
     // Train ANN with training data k times
+    vector<int>lookup = vector<int>(trainInput.size(), 0);
+    for (unsigned long i = 0; i < trainInput.size(); i++) {
+        lookup[i] = i;
+    }
     int max = atoi(argv[MIN_ARGS-1]);
-    // cout << "Iters\tAccuracy" << endl;
     int i;
     for (i = 0; i < max; i++) {
-        accuracy(ann, argv[3], layerSizes[0], argv[4]);
-        /*if (i % 1 == 0) {
-            //cout << "                                   \r" << i << "\t" << accuracy(ann, argv[3], layerSizes[0], argv[4]) << endl;
-        }*/
-        // cout << (int)(100 * (float)i/max) << "%    \r";
+        shuffle(lookup.begin(), lookup.end());
+
+        if (PRINT_ACCU && !print_cmp) {
+            cout << "                                   \r" << i << "\t" << accuracy(ann, argv[3], layerSizes[0], argv[4]) << endl;
+        } else {
+            accuracy(ann, argv[3], layerSizes[0], argv[4]);
+        }
+
         fflush(stdout);
+
         for (unsigned long j = 0; j < trainInput.size(); j++) {
-            ann->train(trainInput[j], ann->encodings[trainOutput[j]]);
+            ann->train(trainInput[lookup[j]], ann->encodings[trainOutput[lookup[j]]]);
         }
     }
 
     // Test
-    // cout << i << "   \t" << accuracy(ann, argv[3], layerSizes[0], argv[4]) << endl;
+    if(PRINT_ACCU) {
+        cout << i << "   \t" << accuracy(ann, argv[3], layerSizes[0], argv[4]) << endl;
+    }
     
     return 0;
 }

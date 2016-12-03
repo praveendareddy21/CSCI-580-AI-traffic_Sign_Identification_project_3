@@ -1,0 +1,6 @@
+So far we have been getting best results with this config
+0.561798 
+alpha: 1.0
+default weight .5/nextlayersize
+default bias .01
+sigprime underflow fix with .00000001

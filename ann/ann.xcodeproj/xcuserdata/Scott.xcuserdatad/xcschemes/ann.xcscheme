@@ -63,19 +63,19 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "train-input"
+            argument = "train-input-4"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "train-output"
+            argument = "train-output-4"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "test-input"
+            argument = "test-input-4"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "test-output"
+            argument = "test-output-4"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument

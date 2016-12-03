@@ -113,7 +113,8 @@ void ANN::sigmoid(vector<prob> &input) {
  */
 prob ANN::sigmoidPrime(prob input) {
 //    prob sig = sigmoid(input);
-    return input * ((prob)1.0-input);
+    prob sigPrime = input * ((prob)1.0-input);
+    return (sigPrime ? sigPrime : .00000001);
 }
 
 
