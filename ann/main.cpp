@@ -11,6 +11,7 @@
 #include <ostream>
 #include <stdlib.h>     /* atoi */
 #include <algorithm>
+#include <string>
 #include "ann.h"
 
 #define MIN_ARGS 9
@@ -168,6 +169,8 @@ int main(int argc, char const *argv[]) {
 
     int max = atoi(argv[6]);
     int i;
+    ofstream outputfile;
+
     for (i = 0; i < max; i++) {
         random_shuffle(lookup.begin(), lookup.end());
 
@@ -179,8 +182,15 @@ int main(int argc, char const *argv[]) {
 
         fflush(stdout);
 
+
         for (unsigned long j = 0; j < trainInput.size(); j++) {
             ann->train(trainInput[lookup[j]], ann->encodings[trainOutput[lookup[j]]]);
+        }
+
+        if (i % (max/20) == 0) {
+            outputfile.open(to_string(i) + argv[8]);
+            ann->printAll(outputfile);
+            outputfile.close();
         }
     }
 
@@ -190,9 +200,9 @@ int main(int argc, char const *argv[]) {
     }
 
 
-    ofstream outputfile;
     outputfile.open(argv[8]);
     ann->printAll(outputfile);
+    outputfile.close();
 
     return 0;
 }
