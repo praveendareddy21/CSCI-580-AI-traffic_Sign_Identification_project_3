@@ -16,7 +16,7 @@
  *
  * This constructor only takes an array of weight matrices since the
  * dimensions of the weight matrices correspond to the size of the layers
- * 
+ *
  * @param  weights an array of weight matrices between the layers
  * @param  alpha the learning constant
  * @return the newly created neural network
@@ -33,7 +33,7 @@ ANN::ANN(vector<vector<vector<prob> > >weights, prob alpha) {
         // This means add a row of bias weights to each weight matrix
         vector<vector<prob> > layer;
         layer.reserve(rows + 1);
-        // For each layer of weights, the bias row must be of the same width as the 
+        // For each layer of weights, the bias row must be of the same width as the
         vector<prob>row;
         row.reserve(cols);
         for (unsigned long j = 0; j < cols; j++) {
@@ -43,7 +43,7 @@ ANN::ANN(vector<vector<vector<prob> > >weights, prob alpha) {
         layer.insert(layer.begin()+1, weights[i].begin(), weights[i].end());
         this->weights.push_back(layer);
     }
-    
+
     // Create layers
     // First layer
     vector<prob>layer = vector<prob>(weights[0].size() + 1);
@@ -52,7 +52,7 @@ ANN::ANN(vector<vector<vector<prob> > >weights, prob alpha) {
     this->layers.push_back(layer);
     // Create error nodes
     errors.push_back(vector<prob>(weights[0].size()));
-    
+
     for (unsigned long i = 0; i < weights.size(); i++) {
         // Need to add bias to each layer so set them to be 1 larger than input info
         vector<prob>layer(weights[i][0].size() + 1);
@@ -107,7 +107,7 @@ void ANN::sigmoid(vector<prob> &input) {
  * of the training of a neural network to determine the reponsibility
  * of a given node in the error at output. This is done for regression
  * towards the optimal edge weights in the neural network
- * 
+ *
  * @param  input (the sigmoid value, not the raw value)
  * @return d(sigmoid(input))/dinput
  */
@@ -135,9 +135,9 @@ vector<prob> ANN::sigmoidPrime(const vector<prob> &input) {
 
 /**
  * Performs the feet forward operation on the network
- * This is the essential operation on a neural network, it calculates the output 
+ * This is the essential operation on a neural network, it calculates the output
  * for each layer and each node based on a given input and the current weights of the network
- * 
+ *
  * @param input
  */
 void ANN::feedForward(const vector<prob> &input) {
@@ -151,7 +151,7 @@ void ANN::feedForward(const vector<prob> &input) {
     for (unsigned long i = 0; i < weights.size(); i++) {
         // cblas_dgemv
         unsigned long m = weights[i].size();
-        unsigned long n = weights[i][0].size(); 
+        unsigned long n = weights[i][0].size();
         vector<prob>result = dotTranspose(weights[i], layers[i]);
         sigmoid(result);
         for (unsigned long j = 0; j < result.size(); j++) {
@@ -208,7 +208,7 @@ vector<prob> ANN::omitDummy(const vector<prob> &input) {
  *
  * While not necessary, this function was created for performance optimizations to combine all error operations into one atomic operation
  * This reduces the number of intermediate copies of these vectors which eliminates malloc and free calls
- * 
+ *
  * @param  output
  * @param  expectedOutput
  * @return the computed error
@@ -251,7 +251,7 @@ void ANN::commit() {
 
 /**
  * Trains the neural network with a given input and output
- * 
+ *
  * @param input  the input values form the training data
  * @param output the expected output
  */
@@ -266,7 +266,7 @@ void ANN::train(const vector<prob> &input, const vector<prob> &output) {
 
 /**
  * Compute the euclidean distance between two vectors
- * 
+ *
  * @param  left the left vector
  * @param  right the right vector
  * @return the euclidean distance
@@ -317,11 +317,11 @@ void ANN::multiply(vector<prob> &vec, prob factor) {
  *
  * This is the same as multiplying two column vectors U and V like so UV^T
  *
- * This function was bulit off of an original outerProduct function 
+ * This function was bulit off of an original outerProduct function
  * but a multiplication and in place summation were added to reduce malloc and free calls and improve performance
  *
  * @see cblas_dger
- * 
+ *
  * @param output the output matrix to add to
  * @param left the left vector (u) to multiply
  * @param right the right vector (v) to multiply
@@ -339,9 +339,9 @@ void ANN::outerProductAddMultiply(vector<vector<prob> >&output, const vector<pro
 /**
  * Adds values from a vector to another vector
  *
- * This function happens in place and mutates the left object. 
+ * This function happens in place and mutates the left object.
  * This is fast but dangerous!
- * 
+ *
  * @param left the left and output vector
  * @param right the right vector
  */
@@ -448,4 +448,19 @@ void ANN::printFirstWeights() {
         cout << weights[0][1][i] << " ";
     }
     cout << endl;
+}
+
+/* weights[0][0][1] = weight from layer 1 node to layer 2 node 2
+  **/
+
+void ANN::printAll(ostream &outstream){
+  outstream << setprecision(17);
+  for(unsigned long i = 0; i < weights.size(); i++) {
+    for(unsigned long j = 0; j < weights[i].size(); j++){
+      for(unsigned long k = 0; k < weights[i][j].size(); k++){
+          outstream << weights[i][j][k] << " ";
+        }
+      }
+      outstream << endl;
+    }
 }

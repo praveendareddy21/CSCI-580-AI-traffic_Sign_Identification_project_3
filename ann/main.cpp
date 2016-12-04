@@ -13,7 +13,7 @@
 #include <algorithm>
 #include "ann.h"
 
-#define MIN_ARGS 8
+#define MIN_ARGS 9
 
 #define PRINT_ACCU true
 
@@ -49,7 +49,7 @@ prob accuracy(ANN* ann, const char* input_file_name, int input_layer_size, const
     ifstream test_input_file;
     test_input_file.open(input_file_name);
     vector<vector<prob> >testInput = matrixFromInput(&test_input_file, output_layer_size, input_layer_size);
-    
+
 
     // Calculate accuracy
     vector<int>output_errors = vector<int>(output_layer_size, 0);
@@ -58,15 +58,15 @@ prob accuracy(ANN* ann, const char* input_file_name, int input_layer_size, const
     prob corrects = 0;
     if (print_cmp) {
         cout << "---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n";
-        
+
     }
     for (unsigned long i = 0; i < testInput.size(); i++) {
         int digit = ann->classify(testInput[i]);
         if (print_cmp) {
             cout << testOutput[i] << " ";
-            classifications.push_back(digit);    
+            classifications.push_back(digit);
         }
-        
+
         int correct = digit == testOutput[i];
         if (correct) {
             output_correct[testOutput[i]]++;
@@ -84,7 +84,7 @@ prob accuracy(ANN* ann, const char* input_file_name, int input_layer_size, const
     }
 
 
-    
+
 /*
     cout << "Classes\t";
     for (unsigned long i; i < output_layer_size; i++) {
@@ -110,19 +110,19 @@ prob accuracy(ANN* ann, const char* input_file_name, int input_layer_size, const
 int main(int argc, char const *argv[]) {
     // User input verification
     if (argc < MIN_ARGS) {
-        printf("Usage: ann <train_input> <train_output> <test_input> <test_output> <structure> <iterations> <alpha> [-comp]\n");
+        printf("Usage: ann <train_input> <train_output> <test_input> <test_output> <structure> <iterations> <alpha> <output_file> [-comp]\n");
         return 1;
     }
 
     if (argc > MIN_ARGS) {
         if (!strcmp("-comp", argv[MIN_ARGS])) {
             print_cmp = true;
-        }   
+        }
     }
-    
+
     ifstream structure;
     structure.open(argv[5]);
-    
+
     ifstream weight_file;
     weight_file.open(argv[6]);
     vector<int>layerSizes;
@@ -142,7 +142,7 @@ int main(int argc, char const *argv[]) {
 
     // Created the ANN with the given weights (automatically knows structure based on weights)
     ANN *ann = new ANN(weights, atof(argv[7]));
-    
+
     // Read train output
     ifstream train_output_file;
     train_output_file.open(argv[2]);
@@ -151,13 +151,13 @@ int main(int argc, char const *argv[]) {
     while(train_output_file >> buff) {
         trainOutput.push_back(buff);
     }
-    
+
     // Read train input
     ifstream train_input_file;
     train_input_file.open(argv[1]);
     vector<vector<prob> >trainInput = matrixFromInput(&train_input_file, (int)trainOutput.size(), layerSizes[0]);
 
-    
+
     // Train ANN with training data k times
     vector<int>lookup = vector<int>(trainInput.size(), 0);
     for (unsigned long i = 0; i < trainInput.size(); i++) {
@@ -188,6 +188,11 @@ int main(int argc, char const *argv[]) {
     if(PRINT_ACCU) {
         cout << i << "   \t" << accuracy(ann, argv[3], layerSizes[0], argv[4]) << endl;
     }
-    
+
+
+    ofstream outputfile;
+    outputfile.open(argv[8]);
+    ann->printAll(outputfile);
+
     return 0;
 }

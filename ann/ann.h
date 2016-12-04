@@ -27,7 +27,7 @@ public:
     int classify(const vector<prob>& input); // Classifies the output using euclidean distance
     void commit(); // Adjusts weights and clears errors
     void print(const vector<vector<prob> > &matrix);
-    void printAllWeights(ostream& stream);
+    void printAll(ostream& stream);
     void print(const vector<prob> &vector);
     void printFirstWeights();
     vector<vector<prob> >encodings;
@@ -37,7 +37,7 @@ private:
     vector<vector<vector<prob> > >weights; // Array of matrices with weight values
     vector<vector<prob> >layers; // Array of arrays with node values
     vector<vector<prob> >errors; // The current calculated errors associated with the nodes
-    
+
     // Utility Functions
     vector<prob> omitDummy(const vector<prob> &input);
     prob sigmoid(prob); // The sigmoid activation function (a.k.a. logistic)
@@ -52,7 +52,7 @@ private:
     vector<prob> multiply(const vector<prob> &left, const vector<prob> &right); // Mulitplies vectors (immutable)
     void multiply(vector<prob> &left, prob factor); // Multiplies vector by factor (in-place, mutating)
     vector<prob> error(const vector<prob> &output, const vector<prob> &expectedOutput); // Computes error between layer and output
-    
+
     //2D
     vector<prob>dot(const vector<vector<prob> >&matrix, const vector<prob>&vector); // Computes the dot product between a matrix and vector
     vector<prob>dotTranspose(const vector<vector<prob> > &matrix, const vector<prob> &vector); // Computes the dot product between a matrix\s transpose and a vector
@@ -83,6 +83,6 @@ I have drastically improved my ANN's performance by switching from a value-type 
 I have also switched to heavy reference-type usage and added mutating, in-place operations on variables that could be altered.
 The execution time on test 2 went from 12s to 1s after all optimizations.
 
-Next step is to leverage a linear algebra library that takes advantage of the architecture and parallellism. It will make all matrix operations O(2) instead of O(n^2) 
+Next step is to leverage a linear algebra library that takes advantage of the architecture and parallellism. It will make all matrix operations O(2) instead of O(n^2)
 
  */
