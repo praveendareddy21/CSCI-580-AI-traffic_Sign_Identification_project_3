@@ -460,7 +460,7 @@ void ANN::printAll(ostream &outstream){
       for(unsigned long k = 0; k < weights[i][j].size(); k++){
           outstream << weights[i][j][k] << " ";
         }
-      }
-      outstream << endl;
+        outstream << endl;
+      }      
     }
 }
