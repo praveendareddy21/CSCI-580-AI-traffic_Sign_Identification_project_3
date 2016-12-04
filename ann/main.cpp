@@ -13,8 +13,7 @@
 #include <algorithm>
 #include "ann.h"
 
-#define MIN_ARGS 7
-#define ALPHA 1.0
+#define MIN_ARGS 8
 
 #define PRINT_ACCU true
 
@@ -111,7 +110,7 @@ prob accuracy(ANN* ann, const char* input_file_name, int input_layer_size, const
 int main(int argc, char const *argv[]) {
     // User input verification
     if (argc < MIN_ARGS) {
-        printf("Usage: ann <train_input> <train_output> <test_input> <test_output> <structure> <k> [-comp]\n");
+        printf("Usage: ann <train_input> <train_output> <test_input> <test_output> <structure> <iterations> <alpha> [-comp]\n");
         return 1;
     }
 
@@ -142,7 +141,7 @@ int main(int argc, char const *argv[]) {
     }
 
     // Created the ANN with the given weights (automatically knows structure based on weights)
-    ANN *ann = new ANN(weights, ALPHA);
+    ANN *ann = new ANN(weights, atof(argv[7]));
     
     // Read train output
     ifstream train_output_file;
@@ -164,10 +163,13 @@ int main(int argc, char const *argv[]) {
     for (unsigned long i = 0; i < trainInput.size(); i++) {
         lookup[i] = i;
     }
-    int max = atoi(argv[MIN_ARGS-1]);
+
+    srand ( unsigned ( time(0) ) );
+
+    int max = atoi(argv[6]);
     int i;
     for (i = 0; i < max; i++) {
-        shuffle(lookup.begin(), lookup.end());
+        random_shuffle(lookup.begin(), lookup.end());
 
         if (PRINT_ACCU && !print_cmp) {
             cout << "                                   \r" << i << "\t" << accuracy(ann, argv[3], layerSizes[0], argv[4]) << endl;
