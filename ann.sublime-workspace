@@ -1,0 +1,2397 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"out",
+				"output_file"
+			],
+			[
+				"possible",
+				"possible_firsts"
+			],
+			[
+				"middle",
+				"middle_combos"
+			],
+			[
+				"PRINT",
+				"PRINT_ACCU"
+			],
+			[
+				"cla",
+				"classifications"
+			],
+			[
+				"output",
+				"output_correct"
+			],
+			[
+				"first",
+				"first_last"
+			],
+			[
+				"outer",
+				"outer_combos"
+			],
+			[
+				"valid",
+				"valid_combos"
+			],
+			[
+				"midd",
+				"middle_words"
+			],
+			[
+				"inpu",
+				"input_layer_size"
+			],
+			[
+				"dire",
+				"directories"
+			],
+			[
+				"fac",
+				"factorization"
+			],
+			[
+				"factori",
+				"factorizations_cache"
+			],
+			[
+				"max",
+				"max_factors"
+			],
+			[
+				"fact",
+				"factorizations_found"
+			],
+			[
+				"factor",
+				"factorizations_found"
+			],
+			[
+				"digit",
+				"digital_root"
+			],
+			[
+				"num",
+				"num_digits"
+			],
+			[
+				"cur",
+				"cur_digits"
+			],
+			[
+				"com",
+				"combinations"
+			],
+			[
+				"method",
+				"method_dispatch"
+			],
+			[
+				"camel",
+				"camelizedJson"
+			],
+			[
+				"trunca",
+				"truncatables"
+			],
+			[
+				"is",
+				"isTruncatable"
+			],
+			[
+				"trunc",
+				"truncatedRight"
+			],
+			[
+				"trun",
+				"truncatables"
+			],
+			[
+				"pand",
+				"pandigitalPrimes"
+			],
+			[
+				"pandigi",
+				"pandigitalPrimesCount"
+			],
+			[
+				"base",
+				"baseMagic"
+			],
+			[
+				"cac",
+				"cacheMagnitude"
+			],
+			[
+				"cache",
+				"cacheMagnitude"
+			],
+			[
+				"cach",
+				"cacheSize"
+			],
+			[
+				"up",
+				"up_to"
+			],
+			[
+				"get",
+				"getInitialState\t Life Cycle"
+			],
+			[
+				"sigm",
+				"sigmoidPrime"
+			],
+			[
+				"pr",
+				"Probability"
+			],
+			[
+				"digits",
+				"digits_base"
+			],
+			[
+				"number",
+				"number_digits"
+			],
+			[
+				"circ",
+				"circular_primes"
+			],
+			[
+				"req_",
+				"req_data_s"
+			],
+			[
+				"use",
+				"use_queue"
+			],
+			[
+				"empy",
+				"empty_count"
+			],
+			[
+				"reques",
+				"requester_thread"
+			],
+			[
+				"fa",
+				"factorial_d_s"
+			],
+			[
+				"nex",
+				"next_minimum"
+			],
+			[
+				"year",
+				"yearSundays"
+			],
+			[
+				"names",
+				"names_map"
+			],
+			[
+				"ds",
+				"divisible"
+			],
+			[
+				"preven",
+				"preventDefault"
+			],
+			[
+				"add",
+				"add-feature"
+			],
+			[
+				"feature_gr",
+				"feature_group_name"
+			],
+			[
+				"feature_",
+				"feature_group_edit_form"
+			],
+			[
+				"preve",
+				"preventDefault"
+			],
+			[
+				"switch",
+				"switchClasses"
+			],
+			[
+				"remove",
+				"remove_field_callback"
+			],
+			[
+				"remove_feature",
+				"remove_feature_callback"
+			],
+			[
+				"if",
+				"ifelse\tif … else …"
+			],
+			[
+				"feature",
+				"featureFields"
+			],
+			[
+				"header",
+				"headerElement"
+			],
+			[
+				"backgo",
+				"background-color"
+			],
+			[
+				"back",
+				"background"
+			],
+			[
+				"donation",
+				"donationStation"
+			],
+			[
+				"st",
+				"station_type"
+			],
+			[
+				"find",
+				"findNearestLocation"
+			],
+			[
+				"geo",
+				"geo_location"
+			],
+			[
+				"address",
+				"address-search"
+			],
+			[
+				"promp",
+				"promptAddress"
+			],
+			[
+				"chan",
+				"change-address"
+			],
+			[
+				"your-loca",
+				"your-location-result"
+			],
+			[
+				"email",
+				"email_body"
+			],
+			[
+				"call",
+				"call-label"
+			],
+			[
+				"pi",
+				"pickup_request_success"
+			],
+			[
+				"addre",
+				"addressFailure"
+			],
+			[
+				"notific",
+				"notification-settings"
+			],
+			[
+				"drop-",
+				"drop-off-failure"
+			],
+			[
+				"drop-off",
+				"drop-off-success"
+			],
+			[
+				"dro",
+				"drop-off-directions"
+			],
+			[
+				"drop",
+				"drop-off-logo"
+			],
+			[
+				"charity",
+				"charityImages"
+			],
+			[
+				"cahrity",
+				"charity_id"
+			],
+			[
+				"pickup",
+				"pickup_month_day"
+			],
+			[
+				"padding",
+				"padding-bottom"
+			],
+			[
+				"pre",
+				"pre\tpre"
+			],
+			[
+				"mysql_rel",
+				"mysql_real_escape_string"
+			],
+			[
+				"show",
+				"show-pickup"
+			],
+			[
+				"institun",
+				"institution_id"
+			],
+			[
+				"call_",
+				"call_list_form"
+			],
+			[
+				"terri",
+				"territory_clause"
+			],
+			[
+				"territo",
+				"territory_id"
+			],
+			[
+				"institutions",
+				"institutions-list"
+			],
+			[
+				"draw",
+				"drawPeopleCharts"
+			],
+			[
+				"category",
+				"category_count"
+			],
+			[
+				"start",
+				"startDate"
+			],
+			[
+				"data",
+				"dateFormat"
+			],
+			[
+				"charts",
+				"charts_data"
+			],
+			[
+				"no",
+				"notes_data"
+			],
+			[
+				"backgoru",
+				"background-repeat"
+			],
+			[
+				"RED",
+				"REDIRECT_URI"
+			],
+			[
+				"page",
+				"page_offset"
+			],
+			[
+				"total",
+				"total_mailers"
+			],
+			[
+				"meta",
+				"$meta_query_args〔variable〕"
+			],
+			[
+				"post",
+				"post_type"
+			],
+			[
+				"query",
+				"query_vars"
+			],
+			[
+				"q",
+				"query_vars"
+			],
+			[
+				"current",
+				"current_bric_weight"
+			],
+			[
+				"wp3_",
+				"wp3_inventory_caches"
+			],
+			[
+				"last",
+				"last_cached_date"
+			],
+			[
+				"inven",
+				"$inventory_source_locations〔variable〕"
+			],
+			[
+				"inventor",
+				"$inventory_source_locations〔variable〕"
+			],
+			[
+				"invento",
+				"inventory_report"
+			],
+			[
+				"heder",
+				"$headers〔variable〕"
+			],
+			[
+				"weekly",
+				"weekly_mailers"
+			],
+			[
+				"location",
+				"location_post"
+			],
+			[
+				"isse",
+				"isset($_GET['report_type"
+			],
+			[
+				"load",
+				"loadid"
+			],
+			[
+				"get_post",
+				"get_post_meta"
+			],
+			[
+				"possibleUni",
+				"possibleUnitIds"
+			],
+			[
+				"poss",
+				"possibleUnits"
+			],
+			[
+				"possi",
+				"$possibleUnitIds〔variable〕"
+			],
+			[
+				"plu",
+				"pluralShortName〔variable〕"
+			],
+			[
+				"new",
+				"newWidget"
+			],
+			[
+				"Inventory",
+				"InventoryIngredientType"
+			],
+			[
+				"Pantry",
+				"Pantry\\Bundle\\Entity\\Inventory"
+			],
+			[
+				"Inc",
+				"InventoryIngredientType〔class〕"
+			],
+			[
+				"Invento",
+				"InventoryIngredientType"
+			],
+			[
+				"type",
+				"type=\"hidden"
+			],
+			[
+				"end",
+				"endblock"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "ann/ann.h",
+			"settings":
+			{
+				"buffer_size": 4224,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "ann/ann.cpp",
+			"settings":
+			{
+				"buffer_size": 16190,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "ann/main.cpp",
+			"settings":
+			{
+				"buffer_size": 6497,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "ann/teststructure.txt",
+			"settings":
+			{
+				"buffer_size": 5,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "4"
+			}
+		},
+		{
+			"file": "ann/testsimplebiased.txt",
+			"settings":
+			{
+				"buffer_size": 71,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "ann/testsimplebiased-out.txt",
+			"settings":
+			{
+				"buffer_size": 71,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "ann/testoutput.txt",
+			"settings":
+			{
+				"buffer_size": 9767423,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 354.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"gi tpull",
+				"Git: Pull"
+			],
+			[
+				"git pull",
+				"Git: Pull"
+			],
+			[
+				"gitp ",
+				"Git: Pull"
+			],
+			[
+				"git push",
+				"Git: Push"
+			],
+			[
+				"git com",
+				"Git: Commit"
+			],
+			[
+				"git ad",
+				"Git: Add All"
+			],
+			[
+				"git psuh",
+				"Git: Push"
+			],
+			[
+				"sspy",
+				"Set Syntax: Python"
+			],
+			[
+				"sspy\t",
+				"Set Syntax: Python"
+			],
+			[
+				"ssp",
+				"Set Syntax: Python"
+			],
+			[
+				"sshtml",
+				"Set Syntax: HTML"
+			],
+			[
+				"ssjsx",
+				"Set Syntax: JSX"
+			],
+			[
+				"gi tpush",
+				"Git: Push"
+			],
+			[
+				"git pul",
+				"Git: Pull"
+			],
+			[
+				"git co",
+				"Git: Commit"
+			],
+			[
+				"gt push",
+				"Git: Push"
+			],
+			[
+				"gti co",
+				"Git: Commit"
+			],
+			[
+				"git ad cu",
+				"Git: Add Current File"
+			],
+			[
+				"git add",
+				"Git: Add Current File"
+			],
+			[
+				"jsx",
+				"Set Syntax: JSX"
+			],
+			[
+				"ssphp",
+				"Set Syntax: PHP"
+			],
+			[
+				"ssbas",
+				"Set Syntax: Shell Script (Bash)"
+			],
+			[
+				"sshtm",
+				"Set Syntax: HTML (Rails)"
+			],
+			[
+				"markd",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"sshtmld",
+				"Set Syntax: HTML (Django)"
+			],
+			[
+				"sshtmldj",
+				"Set Syntax: HTML (Django)"
+			],
+			[
+				"markdown",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"git change",
+				"Git: Change Branch"
+			],
+			[
+				"sshs",
+				"Set Syntax: Shell Script (Bash)"
+			],
+			[
+				"ssjs",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"mar",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"ssmd",
+				"Set Syntax: Markdown"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: List Packages"
+			],
+			[
+				"git stat",
+				"Git: Status"
+			],
+			[
+				"sshtd",
+				"Set Syntax: HTML (Django)"
+			],
+			[
+				"ssht",
+				"Set Syntax: HTML"
+			],
+			[
+				"sssw",
+				"Set Syntax: Swift"
+			],
+			[
+				"sssh",
+				"Set Syntax: Shell Script (Bash)"
+			],
+			[
+				"git comm",
+				"Git: Commit"
+			],
+			[
+				"it co",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"ssc++",
+				"Set Syntax: C++"
+			],
+			[
+				"ssw",
+				"Set Syntax: Swift"
+			],
+			[
+				"ssrb",
+				"Set Syntax: Ruby"
+			],
+			[
+				"git ocmm",
+				"Git: Commit"
+			],
+			[
+				"ss++",
+				"Set Syntax: C++"
+			],
+			[
+				"ssblad",
+				"Set Syntax: Laravel Blade"
+			],
+			[
+				"dis",
+				"Package Control: Disable Package"
+			],
+			[
+				"disabl",
+				"Package Control: Disable Package"
+			],
+			[
+				"sshm",
+				"Set Syntax: HTML (Rails)"
+			],
+			[
+				"git commi",
+				"Git: Commit"
+			],
+			[
+				"git commti",
+				"Git: Commit"
+			],
+			[
+				"ssbla",
+				"Set Syntax: Laravel Blade"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"bro",
+				"SFTP: Browse Server…"
+			],
+			[
+				"sfpt",
+				"SFTP: Browse Server…"
+			],
+			[
+				"show",
+				"SFTP: Show Panel"
+			],
+			[
+				"sscss",
+				"Set Syntax: CSS"
+			],
+			[
+				"sshtml\t",
+				"Set Syntax: HTML"
+			],
+			[
+				"ssq",
+				"Set Syntax: SQL"
+			],
+			[
+				"disable packa",
+				"Package Control: Disable Package"
+			],
+			[
+				"autcomplet",
+				"SublimeCodeIntel: Disable Live Autocompletion"
+			],
+			[
+				"auto",
+				"SublimeCodeIntel: Disable Live Autocompletion"
+			],
+			[
+				"git statu",
+				"Git: Status"
+			],
+			[
+				"stencil",
+				"Set Syntax: Stencil"
+			],
+			[
+				"enable",
+				"Package Control: Enable Package"
+			],
+			[
+				"close",
+				"Project: Close"
+			],
+			[
+				"packa",
+				"Package Control: List Packages"
+			],
+			[
+				"sstw",
+				"Set Syntax: HTML (Twig)"
+			],
+			[
+				"php",
+				"Set Syntax: PHP"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"remov",
+				"Package Control: Remove Package"
+			],
+			[
+				"ssl",
+				"Set Syntax: LESS"
+			],
+			[
+				"brow",
+				"SFTP: Browse Server…"
+			],
+			[
+				"brows",
+				"SFTP: Browse Server…"
+			],
+			[
+				"sets",
+				"Set Syntax: LESS"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"ssth",
+				"Set Syntax: HTML (Twig)"
+			],
+			[
+				"sftp can",
+				"SFTP: Cancel Upload"
+			],
+			[
+				"pro",
+				"Project: Add Folder"
+			],
+			[
+				"sft",
+				"SFTP: Edit Remote Mapping…"
+			],
+			[
+				"sftp",
+				"SFTP: Download File"
+			],
+			[
+				"ed",
+				"SFTP: Edit Server…"
+			],
+			[
+				"edit",
+				"SFTP: Edit Server…"
+			],
+			[
+				"edit ser",
+				"SFTP: Edit Server…"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Discover Packages"
+			],
+			[
+				"disbale",
+				"Package Control: Disable Package"
+			],
+			[
+				"packaen",
+				"Package Control: Enable Package"
+			],
+			[
+				"pac re",
+				"Package Control: Remove Package"
+			],
+			[
+				"pacaken",
+				"Package Control: Enable Package"
+			],
+			[
+				"disable",
+				"Package Control: Disable Package"
+			],
+			[
+				"disa",
+				"Package Control: Disable Package"
+			],
+			[
+				"pa ",
+				"Package Control: Install Package"
+			],
+			[
+				"console",
+				"Set Syntax: R Console"
+			]
+		],
+		"width": 467.0
+	},
+	"console":
+	{
+		"height": 299.0,
+		"history":
+		[
+			"git status",
+			"print(\"test\")",
+			"ls",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/Scott/Documents/School/Chico/F16/580/proj3-repo/ann"
+	],
+	"file_history":
+	[
+		"/Users/Scott/Documents/School/Chico/F16/430/team-repo/tracker",
+		"/Users/Scott/Documents/School/Chico/F16/580/proj3-repo/ann/testbiasedweights",
+		"/Users/Scott/Documents/School/Chico/F16/580/proj3-repo/ann/0testoutput.txt",
+		"/Users/Scott/Documents/School/Chico/F16/580/proj3-repo/ann.sublime-project",
+		"/Users/Scott/Documents/School/Chico/F16/580/proj3-repo/training-results/data-5-struct-56-0001.csv",
+		"/Users/Scott/Documents/School/Chico/F16/580/proj3-repo/ann/testoutput.txt",
+		"/Users/Scott/Documents/School/Chico/F16/580/proj3-repo/all_pngs/test-input-5",
+		"/Users/Scott/Documents/School/Chico/F16/580/proj3-repo/ann/55structure.txt",
+		"/Users/Scott/Documents/School/Chico/F16/580/proj3-repo/ann/56structure.txt",
+		"/Users/Scott/Documents/School/Chico/F16/580/proj3-repo/ann/newstructure.txt",
+		"/Users/Scott/ncl/crypt-hyro/word2-3t.txt",
+		"/Users/Scott/ncl/crypt-hyro/word4f.txt",
+		"/Users/Scott/ncl/crypt-hyro/word1f.txt",
+		"/Users/Scott/ncl/llamas/tid",
+		"/Users/Scott/ncl/crypto-stream/hex",
+		"/Users/Scott/ncl/crypto-stream/pad",
+		"/Users/Scott/ncl/crypto-stream/stream",
+		"/Users/Scott/ncl/crypto-stream/streamcrypt",
+		"/Users/Scott/ncl/crypt-hyro/generator.py",
+		"/Users/Scott/ncl/,",
+		"/Users/Scott/Documents/School/Chico/F16/580/proj3-repo/ann/Makefile",
+		"/Users/Scott/Documents/School/Chico/F16/580/proj3-repo/ann/ann.cpp.blas",
+		"/Users/Scott/Documents/School/Chico/F16/580/proj3-repo/ann/train-input-2",
+		"/Users/Scott/Documents/School/Chico/F16/580/proj3-repo/ann/ann.cpp",
+		"/Users/Scott/Documents/School/Chico/F16/580/proj3-repo/ann/test-input-2",
+		"/Users/Scott/development/personal/hackerrank/project-euler/156/solution.swift",
+		"/Users/Scott/development/personal/hackerrank/project-euler/156/solution.py",
+		"/Users/Scott/ncl/crypt-hyro/txt",
+		"/Users/Scott/ncl/crypt-hyro/first-word.txt",
+		"/Users/Scott/ncl/hexd/extracted.txt",
+		"/Users/Scott/Documents/School/Chico/F16/580/proj3-repo/ann/ann.h",
+		"/Users/Scott/Documents/School/Chico/F16/580/proj3-repo/ann/main.cpp",
+		"/Users/Scott/Google Drive/CSCI580-ANN/bins/mix-sets.py",
+		"/Users/Scott/Desktop/espresso.md",
+		"/Users/Scott/Google Drive/CSCI580-ANN/ann/train-input",
+		"/Users/Scott/Google Drive/CSCI580-ANN/ann/test-input",
+		"/Users/Scott/Google Drive/CSCI580-ANN/ann/ann.cpp",
+		"/Users/Scott/Google Drive/CSCI580-ANN/ann/main.cpp",
+		"/Users/Scott/Google Drive/CSCI580-ANN/bins/yield-train",
+		"/Users/Scott/Google Drive/CSCI580-ANN/bins/yield-test",
+		"/Users/Scott/Google Drive/CSCI580-ANN/bins/stop-test",
+		"/Users/Scott/Google Drive/CSCI580-ANN/bins/speed.bin",
+		"/Users/Scott/Google Drive/CSCI580-ANN/bins/speed-test",
+		"/Users/Scott/Google Drive/CSCI580-ANN/bins/speed-train",
+		"/Users/Scott/Google Drive/CSCI580-ANN/bins/stop-train",
+		"/Users/Scott/Google Drive/CSCI580-ANN/bins/railroad-train",
+		"/Users/Scott/Google Drive/CSCI580-ANN/bins/railroad-test",
+		"/Users/Scott/Google Drive/CSCI580-ANN/bins/noparking-test",
+		"/Users/Scott/Google Drive/CSCI580-ANN/bins/donotenter.bin",
+		"/Users/Scott/Google Drive/CSCI580-ANN/bins/donotenter-test",
+		"/Users/Scott/Google Drive/CSCI580-ANN/bins/donotenter-train",
+		"/Users/Scott/Google Drive/CSCI580-ANN/bins/noparking-train",
+		"/Users/Scott/Google Drive/CSCI580-ANN/bins/crosswalk.bin",
+		"/Users/Scott/Google Drive/CSCI580-ANN/bins/crosswalk-train",
+		"/Users/Scott/Google Drive/CSCI580-ANN/bins/crosswalk-test",
+		"/Users/Scott/ncl/decoded.hex",
+		"/Users/Scott/Documents/School/Chico/F16/430/team-repo/front-end/tracker/src/js/components/API.js",
+		"/Users/Scott/Documents/School/Chico/F16/430/team-repo/front-end/tracker/node_modules/loud-rejection/api.js",
+		"/Users/Scott/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/Scott/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/Scott/Google Drive/CSCI580-ANN/bing.html",
+		"/Users/Scott/Google Drive/CSCI580-ANN/railroad.txt",
+		"/Users/Scott/Documents/School/Chico/F16/580/proj3/scraped/grayscale.rb",
+		"/Users/Scott/Documents/School/Chico/F16/580/proj3/scrape.sh",
+		"/Users/Scott/Documents/School/Chico/F16/580/proj3/interstateurls.txt",
+		"/Users/Scott/Documents/School/Chico/F16/580/proj3/raw.html",
+		"/Users/Scott/Documents/School/Chico/F16/580/proj3/scraped/converter.rb",
+		"/Users/Scott/Downloads/MOCK_DATA.json",
+		"/Users/Scott/Documents/School/Chico/F16/430/team-repo/front-end/tracker/src/js/components/Page.js",
+		"/Users/Scott/Documents/School/Chico/F16/430/team-repo/front-end/tracker/src/js/components/User.js",
+		"/Users/Scott/Documents/School/Chico/F16/430/team-repo/back-end/API Reference.md",
+		"/Users/Scott/Documents/School/Chico/F16/430/team-repo/front-end/tracker/src/js/components/TrackerIndex.js",
+		"/Users/Scott/Documents/School/Chico/F16/430/team-repo/thePlan.md",
+		"/Users/Scott/Documents/School/Chico/F16/430/team-repo/front-end/tracker/README.md",
+		"/Users/Scott/technologies/caffe/Makefile.config",
+		"/Users/Scott/development/personal/ncl/col.php",
+		"/Users/Scott/development/personal/ncl/col.py",
+		"/Users/Scott/Downloads/lol.txt",
+		"/Users/Scott/development/personal/ncl/md5.py",
+		"/Users/Scott/Documents/School/Chico/F16/580/ec.py",
+		"/Users/Scott/development/google/input",
+		"/Users/Scott/development/google/challenge1.py",
+		"/Users/Scott/development/google/challenge2.py",
+		"/Users/Scott/development/google/test.py",
+		"/Users/Scott/development/personal/hackerrank/project-euler/76/pie.py",
+		"/Users/Scott/development/personal/hackerrank/project-euler/18/18.swift",
+		"/Users/Scott/development/personal/hackerrank/project-euler/76/input.txt",
+		"/Users/Scott/development/personal/hackerrank/project-euler/77/pie.py",
+		"/Users/Scott/development/personal/hackerrank/project-euler/63/input.txt",
+		"/Users/Scott/development/personal/hackerrank/project-euler/63/pie.py",
+		"/Users/Scott/development/personal/hackerrank/project-euler/77/input.txt",
+		"/Users/Scott/development/personal/hackerrank/project-euler/31/solution.py",
+		"/Users/Scott/development/personal/hackerrank/project-euler/41/solution.py",
+		"/Users/Scott/Library/Application Support/Sublime Text 3/Packages/User/Snippets/Python/primes.sublime-snippet",
+		"/Users/Scott/development/personal/hackerrank/project-euler/38/pie.py",
+		"/Users/Scott/development/personal/hackerrank/project-euler/38/swing.swift",
+		"/Users/Scott/development/personal/hackerrank/project-euler/41/solution.swift",
+		"/Users/Scott/development/personal/hackerrank/project-euler/160/solution.swift",
+		"/Users/Scott/Documents/School/Chico/F16/465/repo/Project/tripmate/urls.py",
+		"/Users/Scott/Documents/School/Chico/F16/465/repo/Project/tripmate/models.py",
+		"/Users/Scott/Documents/School/Chico/F16/465/repo/Project/tripmate/templates/tripmate/profile_index.html",
+		"/Users/Scott/Documents/School/Chico/F16/465/repo/Project/tripmate/views.py",
+		"/Users/Scott/Documents/School/Chico/F16/465/repo/Project/tripmate/templates/tripmate/trip_index.html",
+		"/Users/Scott/Documents/School/Chico/F16/465/repo/Project/tripmate/templates/tripmate/trip_edit.html",
+		"/Users/Scott/Documents/School/Chico/F16/465/repo/Project/tripmate/templates/tripmate/register_success.html",
+		"/Users/Scott/Documents/School/Chico/F16/465/repo/Project/tripmate/static/theme.css",
+		"/Users/Scott/Documents/School/Chico/F16/465/repo/Project/tripmate/templates/tripmate/trip_show.html",
+		"/Users/Scott/Documents/School/Chico/F16/465/repo/Project/tripmate/templates/tripmate/register.html",
+		"/Users/Scott/Documents/School/Chico/F16/465/repo/Project/tripmate/templates/tripmate/main_index.html",
+		"/Users/Scott/Documents/School/Chico/F16/465/repo/Project/tripmate/templates/tripmate/main.html",
+		"/Users/Scott/Documents/School/Chico/F16/465/repo/Project/tripmate/templates/tripmate/base.html",
+		"/Users/Scott/Documents/School/Chico/F16/465/repo/Project/tripmate/templates/tripmate/login.html",
+		"/Users/Scott/Documents/School/Chico/F16/465/repo/Project/README.md",
+		"/Users/Scott/development/personal/hackerrank/coding-interview/2stacks/input.txt",
+		"/Users/Scott/development/personal/hackerrank/coding-interview/2stacks/pie.py",
+		"/Users/Scott/Documents/School/Chico/F16/340/dns/DNS-handout/multi-lookup.h",
+		"/Users/Scott/Documents/School/Chico/F16/340/sftp-config.json",
+		"/Users/Scott/Documents/School/Chico/F16/340/dns/DNS-handout/util.c",
+		"/Users/Scott/Documents/School/Chico/F16/340/dns/DNS-handout/lookup.c",
+		"/Users/Scott/Documents/School/Chico/F16/340/dns/DNS-handout/output/mynames.txt",
+		"/Users/Scott/Documents/School/Chico/F16/340/dns/DNS-handout/runtest",
+		"/Users/Scott/Documents/School/Chico/F16/340/dns/DNS-handout/queueTest.c",
+		"/Users/Scott/Documents/School/Chico/F16/340/dns/DNS-handout/Makefile",
+		"/Users/Scott/Documents/School/Chico/F16/340/dns/DNS-handout/pops",
+		"/Users/Scott/Documents/School/Chico/F16/340/dns/DNS-handout/pushes",
+		"/Users/Scott/development/personal/hackerrank/coding-interview/connected/input",
+		"/Users/Scott/development/personal/hackerrank/coding-interview/connected/input2.txt",
+		"/Users/Scott/development/personal/hackerrank/coding-interview/connected/pie.py"
+	],
+	"find":
+	{
+		"height": 24.0
+	},
+	"find_in_files":
+	{
+		"height": 158.0,
+		"where_history":
+		[
+			"/Users/Scott/Documents/School/Chico/F16/430/team-repo/front-end/tracker/src/js",
+			"/Users/Scott/development/personal/hackerrank/project-euler",
+			"/Users/Scott/Documents/School/Chico/F16/465/repo/Project/tripmate/templates/tripmate",
+			"/Users/Scott/development/personal/hackerrank/project-euler",
+			"/Users/Scott/development/personal/hackerrank",
+			"/Users/Scott/Documents/School/Chico/F16/430/team-repo/front-end/redux/src",
+			"/Users/Scott/development/personal/hackerrank/project-euler",
+			"/Users/Scott/Documents/School/Chico/F16/465/repo/Project/tripmate/templates",
+			"/Users/Scott/Documents/School/Chico/F16/430/team-repo/front-end/testtracker/src",
+			"/Users/Scott/development/personal/hackerrank/project-euler",
+			"/Users/Scott/Documents/School/Chico/F16/465/repo/Assignment_4",
+			"/Users/Scott/development/personal/hackerrank/project euler",
+			"/Users/Scott/development/itul/web/ddrv",
+			"/Users/Scott/development/itul/web/ddrv/app",
+			"/Users/Scott/development/itul/web/ddrv",
+			"/Users/Scott/development/itul/web/ddrv/app",
+			"/Users/Scott/development/itul/web/ddrv/app/Http",
+			"/Users/Scott/development/itul/web/ddrv/resources/views",
+			"/Users/Scott/development/itul/web/ddrv/app",
+			"/Users/Scott/development/itul/web/reuse-dev/wp-content/themes/heisenbug",
+			"/Users/Scott/development/itul/web/reuse-dev/wp-content/themes",
+			"/Users/Scott/development/itul/web/reuse-dev/wp-content",
+			"/Users/Scott/development/itul/web/reuse-dev/wp-content/themes",
+			"/Users/Scott/development/itul/web/reuse-dev/wp-content/themes/heisenbug",
+			"/Users/Scott/development/itul/web/reuse-dev",
+			"/Users/Scott/development/itul/web/reuse-dev/wp-content/themes/heisenbug",
+			"/Users/Scott/development/itul/web/reuse-dev",
+			"/Users/Scott/development/itul/web/reuse-dev/wp-content",
+			"/Users/Scott/development/itul/web/genesee/public_html/wp-content/plugins/gensci/inc",
+			"/Users/Scott/development/itul/web/genesee/public_html/wp-content/plugins/gensci",
+			"/Users/Scott/development/itul/web/genesee/public_html",
+			"/Users/Scott/development/itul/web/genesee/public_html/wp-content/plugins/gensci/inc",
+			"/Users/Scott/development/itul/web/genesee/public_html/wp-content/plugins/gensci",
+			"/Users/Scott/development/itul/web/genesee/public_html/wp-content/plugins/gensci/inc",
+			"/Users/Scott/development/itul/web/genesee/public_html/wp-content/plugins/gensci/inc/edi",
+			"/Users/Scott/development/itul/web/gensci/app/framework/template",
+			"/Users/Scott/development/itul/web/gensci/app/framework",
+			"/Users/Scott/development/itul/web/gensci/app/framework/template",
+			"/Users/Scott/development/itul/web/gensci/app",
+			"/Users/Scott/development/itul/web/genesee/public_html",
+			"/Volumes/Media HD/Downloads/SimpleNetworkStreams",
+			"/Users/Scott/Documents/Software Development/i-Tul/web/PUB_ADVGWY/public_html/wp-content/themes/custom_rosenthal",
+			"/Users/Scott/Documents/Software Development/i-Tul/web/PUB_ADVGWY/public_html/wp-content",
+			"/Users/Scott/Documents/Software Development/i-Tul/web/PUB_ADVGWY/public_html/wp-content/themes/custom_rosenthal",
+			"/Users/Scott/Documents/Software Development/i-Tul/web/THRIFT/wp-content/themes/wp-zurb",
+			"/Users/Scott/Documents/Software Development/i-Tul/web/THRIFT/itul",
+			"/Users/Scott/Documents/Software Development/i-Tul/web/THRIFT",
+			"/Users/Scott/Documents/Software Development/i-Tul/web/REUSE/www_tools",
+			"/Users/Scott/Documents/Software Development/Web Development/Sublime Text/pantry/src/Pantry",
+			"/Users/Scott/Documents/Software Development/Web Development/Sublime Text/pantry/src/Pantry/Bundle",
+			"/Users/Scott/Documents/Software Development/Web Development/Sublime Text/pantry",
+			"/Users/Scott/Documents/Software Development/Web Development/Sublime Text/pantry/vendor/twitter/bootstrap/less"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"biased",
+			"comp",
+			"\\s+\\n",
+			"\\s+0",
+			".7",
+			"j",
+			"\\s+0",
+			"\\s+\\n",
+			"\\s+0",
+			">\n",
+			"print_comp",
+			"PRINT_COMP",
+			"\\s+\\n",
+			"\\s+0",
+			"\\s+\\n",
+			"\\s+0",
+			"\\s+\\n",
+			"\\t",
+			",",
+			"\\s{2,}",
+			"\\s+\\n",
+			"                  \n",
+			"                   ",
+			"                  ",
+			"                 ",
+			"                ",
+			"               ",
+			"              ",
+			"             ",
+			"            ",
+			"           ",
+			"          ",
+			"         ",
+			"        ",
+			"       ",
+			"-3",
+			"-32-bw",
+			"]",
+			"[",
+			")",
+			"(",
+			" ",
+			"+",
+			"middle_combos",
+			"])",
+			"\\t",
+			"correct.size()",
+			"%d",
+			"Lf",
+			"lpthread",
+			"for (int j",
+			"unsigned_long",
+			"size_type i",
+			"for (int i",
+			"\\n\\n",
+			"(.).\\1..\\n",
+			".(.).\\1.\\n",
+			"..(.)\\1\\1\\n",
+			".(.)\\1..\\n",
+			".(.)\\1..",
+			"(.)\\1...\\n",
+			"..(.).\\1",
+			"(.)(^[\\1])(^[\\1\\2])(^[\\1\\2\\3])(\\3)",
+			"\\n\\n\\n",
+			"\\n.{5}\\n",
+			" \n",
+			"\\n",
+			" ",
+			"%f",
+			"\\n\\n",
+			" ",
+			"p",
+			" ",
+			"train",
+			"test_file",
+			"train_file",
+			"train_",
+			"next",
+			"\\.",
+			"< 1",
+			"256",
+			"= ''",
+			"= ",
+			"256",
+			"found",
+			"!found",
+			"6",
+			"i",
+			" ",
+			"kindk",
+			"&amp",
+			"\\ndata:.+?\\n",
+			"\\ndata:\\n",
+			"<img.+?src=\"(.+?)\"",
+			"<img.+?src=\".+?\"",
+			"-32\n",
+			"32",
+			"16",
+			"-16",
+			"dir",
+			"file",
+			"%Lf",
+			"noparking",
+			"\\ndata:.+?\\n",
+			"<img.+?src=\"(.+?)\"",
+			"<img.+?src=\".+?\"",
+			"@.+?\\..+?\"",
+			"@(.+?)\\.com",
+			"@(.+?).com",
+			"(",
+			"for i",
+			"i2",
+			"for i",
+			"for i3",
+			"24",
+			"cache",
+			"Content",
+			"src=\"",
+			"Vm0wd2QyUXlVWGxWV0d4V1YwZD",
+			"*",
+			", ",
+			")",
+			"(",
+			"), (",
+			"|",
+			"6",
+			"# print(",
+			"print("
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"\\n",
+			",0",
+			"\\n",
+			",0",
+			"\\n",
+			",0",
+			"\\n",
+			",0",
+			"\\n",
+			",",
+			"\\t",
+			",",
+			"\\n",
+			"for (unsigned long j",
+			"unsigned long",
+			"unsigned_long i",
+			"for (size_type i",
+			"\\n",
+			"",
+			"\\n",
+			"",
+			"\\n",
+			"\\.\\n",
+			"&",
+			"\\n",
+			"$1",
+			"\\n",
+			"$1",
+			"@hpe.com\"",
+			"@hpe.com",
+			"×",
+			"UserForm",
+			"",
+			"file:///Users/Scott",
+			"Content",
+			"$1@mail.csuchico.edu",
+			"category",
+			"CDATA[post]",
+			"border-radius:$border-radius;",
+			"localStorage",
+			"https://",
+			"carrier_id",
+			"",
+			"\\n",
+			"home/thrift",
+			"],",
+			"]",
+			"[",
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "ann/ann.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4224,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								307,
+								307
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"origPos":
+							[
+								0.0,
+								88.0
+							],
+							"remote_loading": false,
+							"syncScroll": false,
+							"synced": false,
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 88.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "ann/ann.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 16190,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1670,
+								1677
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"origPos":
+							[
+								0.0,
+								3688.0
+							],
+							"remote_loading": false,
+							"syncScroll": false,
+							"synced": false,
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3688.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "ann/main.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6497,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6152,
+								6152
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"origPos":
+							[
+								0.0,
+								2044.0
+							],
+							"remote_loading": false,
+							"syncScroll": false,
+							"synced": false,
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2044.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "ann/teststructure.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5,
+								5
+							]
+						],
+						"settings":
+						{
+							"auto_name": "4",
+							"incomplete_sync": null,
+							"origPos":
+							[
+								0.0,
+								0.0
+							],
+							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "ann/testsimplebiased.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 71,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"origPos":
+							[
+								0.0,
+								0.0
+							],
+							"remote_loading": false,
+							"syncScroll": false,
+							"synced": false,
+							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "ann/testsimplebiased-out.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 71,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"origPos":
+							[
+								0.0,
+								0.0
+							],
+							"remote_loading": false,
+							"syncScroll": false,
+							"synced": false,
+							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "ann/testoutput.txt",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 9767423,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"origPos":
+							[
+								0.0,
+								0.0
+							],
+							"remote_loading": false,
+							"syncScroll": false,
+							"synced": false,
+							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 24.0
+	},
+	"input":
+	{
+		"height": 40.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.git":
+	{
+		"height": 231.0
+	},
+	"output.sftp":
+	{
+		"height": 46.0
+	},
+	"pinned_build_system": "",
+	"project": "ann.sublime-project",
+	"replace":
+	{
+		"height": 44.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"0test",
+				"0testoutput.txt"
+			],
+			[
+				"main",
+				"main.cpp"
+			],
+			[
+				"anncpp",
+				"ann.cpp"
+			],
+			[
+				"ann.h",
+				"ann.h"
+			],
+			[
+				"tid",
+				"llamas/tid"
+			],
+			[
+				"makefile",
+				"ann/Makefile"
+			],
+			[
+				"156py",
+				"156/solution.py"
+			],
+			[
+				"156",
+				"156/solution.swift"
+			],
+			[
+				"api",
+				"src/js/components/API.js"
+			],
+			[
+				"page",
+				"src/js/components/Page.js"
+			],
+			[
+				"datast",
+				"src/js/components/DataStore.js"
+			],
+			[
+				"scra",
+				"scrape.sh"
+			],
+			[
+				"col",
+				"~/development/personal/ncl/col.py"
+			],
+			[
+				"rea",
+				"README.md"
+			],
+			[
+				"159pi",
+				"159/pie.py"
+			],
+			[
+				"60in",
+				"60/input.txt"
+			],
+			[
+				"60pie",
+				"60/pie.py"
+			],
+			[
+				"chall",
+				"challenge1.py"
+			],
+			[
+				"input",
+				"input"
+			],
+			[
+				"test2",
+				"test2.py"
+			],
+			[
+				"test",
+				"test.py"
+			],
+			[
+				"18",
+				"18/18.swift"
+			],
+			[
+				"67in",
+				"67/input.txt"
+			],
+			[
+				"67pi",
+				"67/pie.py"
+			],
+			[
+				"76in",
+				"76/input.txt"
+			],
+			[
+				"76pi",
+				"76/pie.py"
+			],
+			[
+				"77pie",
+				"77/pie.py"
+			],
+			[
+				"63p",
+				"63/pie.py"
+			],
+			[
+				"63inpu",
+				"63/input.txt"
+			],
+			[
+				"31",
+				"31/solution.py"
+			],
+			[
+				"31pi",
+				"31/solution.py"
+			],
+			[
+				"77in",
+				"77/input.txt"
+			],
+			[
+				"77ie",
+				"77/pie.py"
+			],
+			[
+				"38pie",
+				"38/pie.py"
+			],
+			[
+				"views",
+				"tripmate/views.py"
+			],
+			[
+				"modl",
+				"tripmate/models.py"
+			],
+			[
+				"profileindex",
+				"tripmate/templates/tripmate/profile_index.html"
+			],
+			[
+				"theme",
+				"tripmate/static/theme.css"
+			],
+			[
+				"mainhtml",
+				"tripmate/templates/tripmate/main.html"
+			],
+			[
+				"mainh",
+				"tripmate/templates/tripmate/main.html"
+			],
+			[
+				"mainin",
+				"tripmate/templates/tripmate/main_index.html"
+			],
+			[
+				"login",
+				"tripmate/templates/tripmate/login.html"
+			],
+			[
+				"base",
+				"tripmate/templates/tripmate/base.html"
+			],
+			[
+				"models",
+				"tripmate/models.py"
+			],
+			[
+				"sftp",
+				"sftp-config.json"
+			],
+			[
+				"sf",
+				"sftp-config.json"
+			],
+			[
+				"40in",
+				"40/input.txt"
+			],
+			[
+				"40pie",
+				"40/pie.py"
+			],
+			[
+				"util",
+				"DNS-handout/util.c"
+			],
+			[
+				"dnslook",
+				"DNS-handout/lookup.c"
+			],
+			[
+				"mynam",
+				"DNS-handout/output/mynames.txt"
+			],
+			[
+				"lookup",
+				"DNS-handout/lookup.c"
+			],
+			[
+				"queuetest",
+				"DNS-handout/queueTest.c"
+			],
+			[
+				"runtest",
+				"DNS-handout/runtest"
+			],
+			[
+				"make",
+				"DNS-handout/Makefile"
+			],
+			[
+				"read",
+				"README.md"
+			],
+			[
+				"multi",
+				"DNS-handout/multi-lookup.c"
+			],
+			[
+				"primein",
+				"prime/input"
+			],
+			[
+				"primepi",
+				"prime/pie.py"
+			],
+			[
+				"connecinput2",
+				"connected/input2.txt"
+			],
+			[
+				"connecin",
+				"connected/input"
+			],
+			[
+				"connepie",
+				"connected/pie.py"
+			],
+			[
+				"median",
+				"running-median/input2.txt"
+			],
+			[
+				"runninpi",
+				"running-median/pie.py"
+			],
+			[
+				"runniin",
+				"running-median/input.txt"
+			],
+			[
+				"brackpie",
+				"brackets/pie.py"
+			],
+			[
+				"brackin",
+				"brackets/input.txt"
+			],
+			[
+				"contapie",
+				"contacts/pie.py"
+			],
+			[
+				"contacin",
+				"contacts/input.txt"
+			],
+			[
+				"ransompi",
+				"ransom/pie.py"
+			],
+			[
+				"run",
+				"anagrams/run"
+			],
+			[
+				"in",
+				"anagrams/input.txt"
+			],
+			[
+				"39in",
+				"39/input.txt"
+			],
+			[
+				"hac",
+				"hack"
+			],
+			[
+				"hack",
+				"hack"
+			],
+			[
+				"39pie",
+				"39/pie.py"
+			],
+			[
+				"38pi",
+				"38/pie.py"
+			],
+			[
+				"38sw",
+				"38/swing.swift"
+			],
+			[
+				"41",
+				"41/solution.swift"
+			],
+			[
+				"38sol",
+				"38/solution.py"
+			],
+			[
+				"37swin",
+				"37/swing.swift"
+			],
+			[
+				"37in",
+				"37/input.txt"
+			],
+			[
+				"swing",
+				"48/swing.swift"
+			],
+			[
+				"48sol",
+				"48/solution.swift"
+			],
+			[
+				"48in",
+				"48/input.txt"
+			],
+			[
+				"160solution",
+				"160/solution-swift2.swift"
+			],
+			[
+				"160",
+				"160/solution.swift"
+			],
+			[
+				"pand",
+				"41/pandigital-primes.txt"
+			],
+			[
+				"41run",
+				"41/run"
+			],
+			[
+				"41sol",
+				"41/solution.swift"
+			],
+			[
+				"solution3",
+				"156/solution3.py"
+			],
+			[
+				"156solpy",
+				"156/solution.py"
+			],
+			[
+				"componentapi",
+				"src/js/components/API.js"
+			],
+			[
+				"156solp",
+				"156/solution.py"
+			],
+			[
+				"38in",
+				"38/input.txt"
+			],
+			[
+				"sum",
+				"sum.py"
+			],
+			[
+				"admin",
+				"tripmate/admin.py"
+			],
+			[
+				"succe",
+				"tripmate/templates/tripmate/register_success.html"
+			],
+			[
+				"tripindex",
+				"tripmate/templates/tripmate/trip_index.html"
+			],
+			[
+				"edi",
+				"tripmate/templates/tripmate/trip_edit.html"
+			],
+			[
+				"show",
+				"tripmate/templates/tripmate/trip_show.html"
+			],
+			[
+				"url",
+				"tripmate/urls.py"
+			],
+			[
+				"registerh",
+				"tripmate/templates/tripmate/register.html"
+			],
+			[
+				"urls",
+				"tripmate/urls.py"
+			],
+			[
+				"templaetindex",
+				"tripmate/templates/tripmate/index.html"
+			],
+			[
+				"156sol",
+				"156/solution.swift"
+			],
+			[
+				"156inp",
+				"156/input.txt"
+			],
+			[
+				"32in",
+				"32/input.txt"
+			],
+			[
+				"32solpy",
+				"32/solution.py"
+			],
+			[
+				"32sol",
+				"32/solution.py"
+			],
+			[
+				"32inpu",
+				"32/input.txt"
+			],
+			[
+				"36in",
+				"36/input.txt"
+			],
+			[
+				"36sol",
+				"36/solution.py"
+			],
+			[
+				"29solu",
+				"29/solution.py"
+			],
+			[
+				"29sol",
+				"29/solution.swift"
+			],
+			[
+				"35sol",
+				"35/solution.py"
+			],
+			[
+				"looku",
+				"lookup.c"
+			],
+			[
+				"output",
+				"output/names1.txt"
+			],
+			[
+				"lookupc",
+				"lookup.c"
+			],
+			[
+				"mullooh",
+				"multi-lookup.h"
+			],
+			[
+				"multilookupc",
+				"multi-lookup.c"
+			],
+			[
+				"ig",
+				".gitignore"
+			],
+			[
+				"gi",
+				".gitignore"
+			],
+			[
+				"isc",
+				"IScoreboard.h"
+			],
+			[
+				"35osl",
+				"35/solution.py"
+			],
+			[
+				"160input",
+				"160/input.txt"
+			],
+			[
+				"solutionsw",
+				"160/solution.swift"
+			],
+			[
+				"craz",
+				"160/crazy.txt"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "ann",
+		"selected_items":
+		[
+			[
+				"ann",
+				"~/Documents/School/Chico/F16/580/proj3-repo/ann.sublime-project"
+			],
+			[
+				"reusede",
+				"~/development/itul/web/reuse-dev/reuse-dev.sublime-project"
+			],
+			[
+				"ddrv",
+				"~/development/itul/web/ddrv/ddrv.sublime-project"
+			],
+			[
+				"std",
+				"~/development/personal/web/StdyBdy/stdybdy.sublime-project"
+			],
+			[
+				"chic",
+				"~/Documents/School/Chico/F16/chico.sublime-project"
+			],
+			[
+				"gen",
+				"~/development/itul/web/genesee/genesee.sublime-project"
+			],
+			[
+				"gense",
+				"~/development/itul/web/genesee/genesee.sublime-project"
+			],
+			[
+				"bv",
+				"~/development/itul/web/bvoptic/bvoptic.sublime-project"
+			],
+			[
+				"gensci",
+				"~/development/itul/web/gensci/gensci.sublime-project"
+			],
+			[
+				"reuse",
+				"~/development/itul/web/reuse/reuse.sublime-project"
+			],
+			[
+				"stdy",
+				"~/development/personal/web/StdyBdy/stdybdy.sublime-project"
+			],
+			[
+				"gensc",
+				"~/development/itul/web/gensci/gensci.sublime-project"
+			],
+			[
+				"gene",
+				"~/development/itul/web/gensci/gensci.sublime-project"
+			],
+			[
+				"gens",
+				"~/development/itul/web/gensci/gensci.sublime-project"
+			],
+			[
+				"env",
+				"~/development/itul/web/envirotech/envtech.sublime-project"
+			],
+			[
+				"ftbi",
+				"~/development/itul/web/ftbiz/ftbiz.sublime-project"
+			],
+			[
+				"webs",
+				"~/Documents/Software Development/Web Development/Sublime Text/website/website.sublime-workspace"
+			],
+			[
+				"genesee",
+				"~/Documents/Software Development/i-Tul/web/genesee.sublime-workspace"
+			],
+			[
+				"",
+				"~/Documents/Software Development/Web Development/Sublime Text/pantry/sublime-text/pantry.sublime-workspace"
+			],
+			[
+				"pre",
+				"~/Documents/Software Development/i-Tul/web/PREV_ADVGWY/prev_advgwy.sublime-project"
+			],
+			[
+				"cclsee",
+				"~/Documents/Software Development/i-Tul/web/ccsleep_dev.sublime-project"
+			],
+			[
+				"pantr",
+				"~/Documents/Software Development/Web Development/Sublime Text/pantry/sublime/pantry.sublime-project"
+			],
+			[
+				"pantry",
+				"~/Documents/Software Development/Web Development/Sublime Text/pantry/sublime/pantry.sublime-project"
+			],
+			[
+				"chico",
+				"~/Documents/School/Chico/chico.sublime-project"
+			],
+			[
+				"thr",
+				"~/Documents/Software Development/i-Tul/web/thrift_dev.sublime-project"
+			],
+			[
+				"thrift",
+				"~/Documents/Software Development/i-Tul/web/thrift_dev.sublime-project"
+			],
+			[
+				"thri",
+				"~/Documents/Software Development/i-Tul/web/thrift_dev.sublime-project"
+			],
+			[
+				"th",
+				"~/Documents/Software Development/i-Tul/web/thrift_dev.sublime-project"
+			],
+			[
+				"chi",
+				"~/Documents/School/Chico/chico.sublime-project"
+			],
+			[
+				"so",
+				"~/Documents/Software Development/Web Development/Sublime Text/Soccer App/soccer_app.sublime-project"
+			],
+			[
+				"socc",
+				"~/Documents/Software Development/Web Development/Sublime Text/Soccer App/soccer_app.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 67.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 805.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 228.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

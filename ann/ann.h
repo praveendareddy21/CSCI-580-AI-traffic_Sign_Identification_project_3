@@ -18,6 +18,7 @@ typedef double prob;
 class ANN {
 public:
     ANN(vector<vector<vector<prob> > >weights, prob alpha);
+    ANN(vector<vector<vector<prob> > >weights, prob alpha, bool biased);
     ~ANN();
     void train(const vector<prob> &input, const vector<prob> &output);
     void feedForward(const vector<prob> &input); // Feeds the neural net (calculates)

@@ -75,6 +75,64 @@ ANN::ANN(vector<vector<vector<prob> > >weights, prob alpha) {
 
 }
 
+
+/**
+ * The ANN constructor
+ *
+ * This constructor only takes an array of weight matrices since the
+ * dimensions of the weight matrices correspond to the size of the layers
+ *
+ * @param  weights an array of weight matrices between the layers
+ * @param  alpha the learning constant
+ * @return the newly created neural network
+ */
+ANN::ANN(vector<vector<vector<prob> > >weights, prob alpha, bool biased) {
+    // Create allocate space for our vectors for peformance
+    this->weights.reserve(weights.size());
+    this->layers.reserve(weights.size() + 1);
+    this->errors.reserve(weights.size() + 1);
+    // Copy over the weight matrices, adding bias weights
+    for (unsigned long i = 0; i < weights.size(); i++) {
+        unsigned long rows = weights[i].size();
+        unsigned long cols = weights[i][0].size();
+        // This means add a row of bias weights to each weight matrix
+        vector<vector<prob> > layer;
+        layer.reserve(rows);
+        layer.insert(layer.begin(), weights[i].begin(), weights[i].end());
+        this->weights.push_back(layer);
+    }
+
+    // Create layers
+    // First layer
+    vector<prob>layer = vector<prob>(weights[0].size());
+    // Set bias node to 1
+    layer[0] = 1;
+    this->layers.push_back(layer);
+    // Create error nodes
+    errors.push_back(vector<prob>(weights[0].size()));
+
+    for (unsigned long i = 0; i < weights.size(); i++) {
+        // Need to add bias to each layer so set them to be 1 larger than input info
+        vector<prob>layer(weights[i][0].size());
+        // Set bias node to 1
+        layer[0] = 1;
+        this->layers.push_back(layer);
+        // Create error nodes
+        errors.push_back(vector<prob>(weights[i][0].size()));
+    }
+
+    // Let's set the encodings for the digits (the ANN is set to recognize as many digits as there are output nodes)
+    unsigned long outputSize = this->layers[this->layers.size() - 1].size() - 1;
+    encodings = vector<vector<prob> >(outputSize, vector<prob>(outputSize, 0.1));
+    for (unsigned long i = 0; i < outputSize; i++) {
+        encodings[i][i] = .9;
+    }
+
+    // Finally let's set the learning constant
+    this->alpha = alpha;
+
+}
+
 /**
  * ANN destructor
  */

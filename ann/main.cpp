@@ -21,6 +21,7 @@
 using namespace std;
 
 bool print_cmp = false;
+bool load_weights = false;
 
 vector<vector<prob> > matrixFromInput(istream *input, int rows, int cols) {
     vector<vector<prob> >matrix;
@@ -30,6 +31,20 @@ vector<vector<prob> > matrixFromInput(istream *input, int rows, int cols) {
         for (int j = 0; j < cols; j++) {
             *input >> buff;
             row.push_back(buff/256.0);
+        }
+        matrix.push_back(row);
+    }
+    return matrix;
+}
+
+vector<vector<prob> > weightMatrixFromInput(istream *input, int rows, int cols) {
+    vector<vector<prob> >matrix;
+    prob buff;
+    for (int i = 0; i < rows; i++) {
+        vector<prob>row;
+        for (int j = 0; j < cols; j++) {
+            *input >> buff;
+            row.push_back(buff);
         }
         matrix.push_back(row);
     }
@@ -108,24 +123,22 @@ prob accuracy(ANN* ann, const char* input_file_name, int input_layer_size, const
     return (prob)corrects/(prob)testOutput.size();
 }
 
+
+// The executing main function
 int main(int argc, char const *argv[]) {
-    // User input verification
-    if (argc < MIN_ARGS) {
-        printf("Usage: ann <train_input> <train_output> <test_input> <test_output> <structure> <iterations> <alpha> <output_file> [-comp]\n");
+    if (argc < 5) {
+        printf("Usage: ann <test_input> <test_output> <structure> <weight_file>\n");
         return 1;
     }
 
-    if (argc > MIN_ARGS) {
-        if (!strcmp("-comp", argv[MIN_ARGS])) {
-            print_cmp = true;
-        }
-    }
-
     ifstream structure;
-    structure.open(argv[5]);
+    structure.open(argv[3]);
 
     ifstream weight_file;
-    weight_file.open(argv[6]);
+    
+    weight_file.open(argv[4]);    
+
+    
     vector<int>layerSizes;
     int layerSize;
     // Read the structure in order to be able to read the weights
@@ -137,13 +150,67 @@ int main(int argc, char const *argv[]) {
     // Read the weights
     vector<vector<vector<prob> > >weights;
     for (unsigned long i = 0; i < layerSizes.size() - 1; i++) {
-        //weights.push_back(matrixFromInput(&weight_file, layerSizes[i], layerSizes[i+1]));
-        weights.push_back(vector<vector<prob> >(layerSizes[i], vector<prob>(layerSizes[i+1], .5/layerSizes[i+1])));
+        weights.push_back(weightMatrixFromInput(&weight_file, layerSizes[i] + 1, layerSizes[i+1]));
     }
 
-    // Created the ANN with the given weights (automatically knows structure based on weights)
-    ANN *ann = new ANN(weights, atof(argv[7]));
+    // Create the ANN with the given weights (automatically knows structure based on weights)
+    
+    ANN *ann = new ANN(weights, 1.0, true);
 
+    cout << "   \t" << accuracy(ann, argv[1], layerSizes[0], argv[2]) << endl;
+
+    return 0;
+
+}
+
+// The training main function
+int main2(int argc, char const *argv[]) {
+    // User input verification
+    if (argc < MIN_ARGS) {
+        printf("Usage: ann <train_input> <train_output> <test_input> <test_output> <structure> <iterations> <alpha> <output_file> <weight_file> [-comp|-weights]\n");
+        return 1;
+    }
+
+    if (argc > MIN_ARGS) {
+        if (!strcmp("-comp", argv[argc-1])) {
+            print_cmp = true;
+        }
+        if (!strcmp("-weights", argv[argc-1])) {
+            load_weights = true;
+        }
+    }
+
+    ifstream structure;
+    structure.open(argv[5]);
+
+    ifstream weight_file;
+    if (load_weights) {
+        weight_file.open(argv[9]);    
+    }
+    
+    vector<int>layerSizes;
+    int layerSize;
+    // Read the structure in order to be able to read the weights
+    while(structure >> layerSize) {
+        vector<prob> layer;
+        layerSizes.push_back(layerSize);
+    }
+
+    // Read the weights
+    vector<vector<vector<prob> > >weights;
+    for (unsigned long i = 0; i < layerSizes.size() - 1; i++) {
+        
+        if (load_weights) {
+            weights.push_back(weightMatrixFromInput(&weight_file, layerSizes[i] + 1, layerSizes[i+1]));
+        } else {
+            weights.push_back(vector<vector<prob> >(layerSizes[i], vector<prob>(layerSizes[i+1], .5/layerSizes[i+1])));
+        }
+    }
+
+    // Create the ANN with the given weights (automatically knows structure based on weights)
+    
+    ANN *ann = (load_weights ? new ANN(weights, atof(argv[7]), load_weights) : new ANN(weights, atof(argv[7])));
+    
     // Read train output
     ifstream train_output_file;
     train_output_file.open(argv[2]);
@@ -169,6 +236,7 @@ int main(int argc, char const *argv[]) {
 
     int max = atoi(argv[6]);
     int i;
+    
     ofstream outputfile;
 
     for (i = 0; i < max; i++) {
