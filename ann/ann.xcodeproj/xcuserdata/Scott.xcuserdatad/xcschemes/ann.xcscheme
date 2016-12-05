@@ -63,27 +63,19 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "train-input-4"
+            argument = "test-input-5"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "train-output-4"
+            argument = "test-output-5"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "test-input-4"
+            argument = "56structure.txt"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "test-output-4"
-            isEnabled = "YES">
-         </CommandLineArgument>
-         <CommandLineArgument
-            argument = "structure"
-            isEnabled = "YES">
-         </CommandLineArgument>
-         <CommandLineArgument
-            argument = "10"
+            argument = "4500learned-weights"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

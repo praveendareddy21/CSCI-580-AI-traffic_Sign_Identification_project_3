@@ -14,7 +14,7 @@ with open(sys.argv[1]) as f:
     for line in f:
         values = line.split()
         dim = int(len(values) ** .5)
-        #print(len(values))
+        print(len(values))
         #print(dim)
         arr = np.zeros((dim,dim), dtype=np.uint8)
         i = 0

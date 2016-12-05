@@ -512,7 +512,7 @@ void ANN::printFirstWeights() {
   **/
 
 void ANN::printAll(ostream &outstream){
-  outstream << setprecision(17);
+  outstream << setprecision(20);
   for(unsigned long i = 0; i < weights.size(); i++) {
     for(unsigned long j = 0; j < weights[i].size(); j++){
       for(unsigned long k = 0; k < weights[i][j].size(); k++){

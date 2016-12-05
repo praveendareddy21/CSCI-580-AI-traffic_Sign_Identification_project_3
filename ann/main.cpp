@@ -73,7 +73,7 @@ prob accuracy(ANN* ann, const char* input_file_name, int input_layer_size, const
     vector<int>classifications;
     prob corrects = 0;
     if (print_cmp) {
-        cout << "---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n";
+        cout << "-----------------------------------------------------------------------------------------------------------------------\n";
 
     }
     for (unsigned long i = 0; i < testInput.size(); i++) {
@@ -125,10 +125,14 @@ prob accuracy(ANN* ann, const char* input_file_name, int input_layer_size, const
 
 
 // The executing main function
-int main(int argc, char const *argv[]) {
+int main2(int argc, char const *argv[]) {
     if (argc < 5) {
         printf("Usage: ann <test_input> <test_output> <structure> <weight_file>\n");
         return 1;
+    }
+
+    for (int i = 0; i < argc; i++) {
+        cout << i << '\t' << argv[i] << endl;
     }
 
     ifstream structure;
@@ -155,16 +159,16 @@ int main(int argc, char const *argv[]) {
 
     // Create the ANN with the given weights (automatically knows structure based on weights)
     
-    ANN *ann = new ANN(weights, 1.0, true);
+    ANN *ann = new ANN(weights, .01, true);
 
     cout << "   \t" << accuracy(ann, argv[1], layerSizes[0], argv[2]) << endl;
 
-    return 0;
+    exit(0);
 
 }
 
 // The training main function
-int main2(int argc, char const *argv[]) {
+int main(int argc, char const *argv[]) {
     // User input verification
     if (argc < MIN_ARGS) {
         printf("Usage: ann <train_input> <train_output> <test_input> <test_output> <structure> <iterations> <alpha> <output_file> <weight_file> [-comp|-weights]\n");
@@ -242,10 +246,17 @@ int main2(int argc, char const *argv[]) {
     for (i = 0; i < max; i++) {
         random_shuffle(lookup.begin(), lookup.end());
 
+        prob calculated_accu = accuracy(ann, argv[3], layerSizes[0], argv[4]);
         if (PRINT_ACCU && !print_cmp) {
-            cout << "                                   \r" << i << "\t" << accuracy(ann, argv[3], layerSizes[0], argv[4]) << endl;
+            cout << i << "\t" << calculated_accu << endl;
         } else {
             accuracy(ann, argv[3], layerSizes[0], argv[4]);
+        }
+
+        if (calculated_accu > .70) {
+            print_cmp = true;
+            accuracy(ann, argv[3], layerSizes[0], argv[4]);
+            print_cmp = false;
         }
 
         fflush(stdout);
@@ -255,7 +266,7 @@ int main2(int argc, char const *argv[]) {
             ann->train(trainInput[lookup[j]], ann->encodings[trainOutput[lookup[j]]]);
         }
 
-        if (i % (max/20) == 0) {
+        if (i % 500 == 0) {
             outputfile.open(to_string(i) + argv[8]);
             ann->printAll(outputfile);
             outputfile.close();
