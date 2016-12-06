@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"print",
+				"print_cmp"
+			],
+			[
 				"out",
 				"output_file"
 			],
@@ -510,10 +514,6 @@
 			[
 				"type",
 				"type=\"hidden"
-			],
-			[
-				"end",
-				"endblock"
 			]
 		]
 	},
@@ -538,12 +538,88 @@
 			}
 		},
 		{
+			"file": "ann/learned/3500learned-weights",
+			"settings":
+			{
+				"buffer_size": 9211681,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "ann/learned/4000learned-weights",
+			"settings":
+			{
+				"buffer_size": 9704444,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "ann/learned/3000learned-weights",
+			"settings":
+			{
+				"buffer_size": 9723515,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "ann/learned/2500learned-weights",
+			"settings":
+			{
+				"buffer_size": 9732859,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "ann/main.cpp",
 			"settings":
 			{
-				"buffer_size": 6497,
+				"buffer_size": 7761,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "ann/test-input-5",
+			"settings":
+			{
+				"buffer_size": 241077,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "255 255 255 255 255 255 254 252 255 255 220 149 101 73 55 60 58 53 68 97 147 219 255 255 252 254 255 255 255 255 255 255 255 255 255 255 255 253 253 255 208 106 81 108 138 163 166 163 156 165 161 136 105 76 103 204 255 253 253 255 255 255 255 255 255 255 255 255 252 255 242 114 65 128 171 172 170 170 162 152 151 156 170 170 173 173 123 58 110 240 255 252 255 255 255 255 255 255 255 252 255 217 62 115 167 163 158 170 169 171 170 169 169 169 171 169 168 170 169 166 110 54 215 255 251 255 255 255 255 255 252 255 205 23 1 119 170 157 159 170 170 171 170 170 170 170 170 171 171 170 161 167 108 1 22 203 255 252 255 255 255 253 255 212 21 0 4 4 114 174 167 171 171 171 171 171 171 171 171 171 171 166 174 99 1 5 0 17 208 255 252 255 254 255 239 77 14 1 4 2 5 120 172 167 171 171 170 167 166 171 171 171 167 174 104 3 2 4 1 25 68 237 255 254 252 255 113 120 153 11 0 4 1 6 126 173 167 170 170 155 153 170 170 167 173 111 2 2 4 1 30 173 104 101 255 252 255 203 69 165 160 123 13 0 5 1 8 133 172 167 170 156 156 171 167 173 115 2 2 4 0 27 155 169 159 52 199 255 255 111 132 161 150 165 136 10 1 4 1 12 138 172 169 164 178 167 172 123 4 2 4 0 24 153 171 165 166 116 100 255 218 86 173 165 166 163 172 130 7 2 7 1 15 141 170 171 179 170 127 7 1 4 1 17 145 171 165 168 169 174 70 217 151 111 173 169 171 171 169 173 126 7 0 4 1 18 146 177 182 131 9 2 4 0 16 144 173 171 172 171 167 173 98 144 108 141 108 85 82 89 134 173 174 119 84 54 0 1 18 164 159 8 1 4 1 11 144 140 81 85 83 110 163 171 134 90 84 164 22 4 28 16 4 111 173 172 177 81 15 7 0 101 123 0 5 2 9 129 174 82 2 25 25 3 50 175 161 60 66 172 12 67 178 165 8 52 174 166 172 106 16 33 83 120 134 73 10 6 127 173 172 86 4 162 178 80 2 152 176 50 67 160 20 30 102 76 3 93 172 168 169 174 95 49 120 99 126 114 40 117 173 165 173 86 3 85 99 25 28 159 152 51 61 153 27 11 50 1 52 178 170 171 169 170 146 70 152 92 87 112 73 161 171 167 173 88 2 46 21 4 143 170 151 51 65 175 13 45 181 43 18 166 170 168 171 158 29 7 130 109 90 107 26 81 175 169 173 88 3 158 128 4 110 172 172 51 82 166 13 35 174 113 3 98 173 170 161 35 1 0 27 71 44 22 0 5 56 152 175 86 2 140 175 16 25 172 162 57 105 143 91 98 172 164 79 100 174 163 39 1 5 0 22 121 78 2 4 2 1 54 165 110 66 155 172 114 70 163 139 89 149 112 173 170 170 170 173 172 166 46 0 6 3 2 97 174 175 71 1 5 5 0 65 175 164 157 169 173 171 173 100 142 216 86 174 163 172 170 169 170 51 1 5 3 2 80 156 166 170 175 66 1 4 3 1 70 177 160 150 163 167 174 71 215 255 111 131 156 165 170 171 56 1 4 4 1 83 159 154 171 169 169 173 60 1 4 4 0 78 176 169 164 162 122 99 255 255 200 64 159 162 175 62 0 5 3 1 71 177 159 169 171 171 169 170 172 54 0 4 4 2 81 175 163 165 50 196 255 252 255 111 116 180 63 1 4 4 1 65 175 169 170 171 171 171 171 169 170 169 49 0 4 3 2 85 176 100 99 255 252 254 255 235 79 57 2 4 4 1 60 172 170 170 170 171 171 171 171 171 169 170 166 43 0 4 3 3 71 67 236 255 254 255 252 255 208 16 0 6 0 51 170 171 169 171 171 171 171 171 171 171 171 169 170 163 39 0 6 1 15 206 255 253 255 255 255 252 255 202 22 0 56 151 165 170 170 171 171 171 170 170 171 171 171 171 170 162 133 42 0 19 199 255 252 255 255 255 255 255 252 255 215 42 108 175 170 170 168 170 171 171 168 169 171 170 170 168 170 159 165 92 37 212 255 251 255 255 255 255 255 255 255 252 255 242 111 65 139 173 172 171 170 171 152 144 170 170 172 172 173 134 58 106 240 255 252 255 255 255 255 255 255 255 255 255 252 253 255 200 106 80 108 145 167 174 165 162 174 167 142 105 75 99 198 255 253 253 255 255 255 255 255 255 255 255 255 255 255 254 252 255 255 215 144 98 70 57 67 65 57 67 95 141 216 255 255 252 254 255 255 255 255 255 255 ",
+			"settings":
+			{
+				"buffer_size": 3601,
+				"line_ending": "Unix",
+				"name": "255 255 255 255 255 255 254 252 255 255 220 149 10"
+			}
+		},
+		{
+			"file": "ann/test-output-5",
+			"settings":
+			{
+				"buffer_size": 126,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "ann/train-input-5",
+			"settings":
+			{
+				"buffer_size": 974378,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "226 225 225 226 226 226 227 227 229 229 229 231 231 232 233 233 233 234 234 234 235 235 236 236 236 236 236 236 235 235 234 244 104 110 110 110 109 110 110 110 111 111 111 111 110 110 111 110 110 111 111 111 111 111 111 111 111 111 111 111 111 112 106 147 86 95 94 94 94 94 93 93 93 93 93 93 93 93 93 93 93 93 93 93 93 93 93 93 93 93 93 93 93 95 87 115 90 100 98 98 98 98 98 98 99 99 99 99 99 99 99 99 99 99 99 99 99 99 99 98 98 98 98 98 98 100 87 191 137 88 99 97 97 97 97 98 96 94 95 95 95 95 94 94 94 95 94 95 95 94 96 98 97 97 97 97 99 88 134 228 209 97 97 98 97 97 98 92 99 108 107 107 107 107 108 107 107 107 107 107 107 108 101 93 98 97 97 97 97 93 209 214 244 158 86 99 97 99 91 121 226 235 234 235 236 236 239 239 239 238 239 239 240 241 237 130 90 99 97 99 84 156 227 222 247 225 109 93 98 99 89 132 252 247 249 250 249 253 247 250 251 254 253 254 255 253 255 143 88 100 98 95 103 219 212 249 253 246 178 87 100 97 99 88 195 252 250 203 173 208 174 209 158 227 199 208 255 255 207 89 99 97 99 84 176 222 229 255 255 248 236 123 90 99 99 91 117 243 252 177 248 197 187 222 186 203 159 174 255 249 126 89 99 99 91 119 226 213 253 255 255 254 248 197 90 98 97 100 85 174 254 180 199 193 184 212 166 188 164 163 254 186 86 100 97 99 88 196 217 237 255 254 255 255 249 243 143 86 99 98 95 101 235 235 203 234 199 226 204 231 237 234 234 109 93 98 100 87 138 228 217 255 255 255 255 255 254 248 217 98 95 97 100 86 154 254 252 253 255 254 255 255 251 255 164 86 100 97 97 93 210 213 244 255 255 255 255 255 255 250 248 164 85 99 97 97 92 215 254 250 251 252 253 253 255 224 96 97 98 100 84 159 226 223 255 255 255 255 255 255 255 255 247 231 112 92 98 99 89 132 253 251 253 254 255 253 254 141 86 100 98 95 105 221 213 249 255 255 255 255 255 255 255 255 252 249 185 87 100 97 99 86 195 255 251 255 253 255 204 88 98 97 100 85 180 221 230 255 254 255 255 255 255 255 255 255 255 248 240 127 90 99 98 91 115 246 255 253 253 250 121 90 99 99 90 121 227 214 254 255 255 255 255 255 255 255 255 255 255 254 249 206 91 98 97 100 85 172 255 248 255 183 86 99 97 99 88 198 216 238 255 255 255 255 255 255 255 255 255 255 255 255 249 248 146 86 100 98 95 98 230 255 238 105 93 98 100 87 142 227 217 255 255 255 255 255 255 255 255 255 255 255 255 255 255 247 223 100 96 98 99 88 142 244 151 86 98 97 97 95 213 213 245 255 255 255 255 255 255 255 255 255 255 255 255 255 255 251 250 169 85 100 97 98 93 99 94 97 96 99 85 162 224 224 255 254 255 255 255 255 255 255 255 255 255 255 255 255 255 255 248 236 113 92 99 97 98 97 98 97 98 94 109 222 211 250 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 252 250 191 86 99 97 97 98 97 97 100 85 183 220 231 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 247 245 133 88 99 97 97 97 99 90 125 228 214 254 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 254 249 211 92 99 97 97 97 99 89 201 216 239 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 249 249 151 86 100 97 100 86 144 227 218 255 254 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 248 226 102 96 99 97 99 213 212 246 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 250 249 173 85 102 85 166 224 226 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 247 238 117 80 110 223 212 251 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 253 247 202 109 196 216 233 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 250 236 231 217 221 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 255 248 231 231 252 255 255 255 255 255 255 255 255 255 255 255 255 255 255 ",
+			"settings":
+			{
+				"buffer_size": 3827,
+				"line_ending": "Unix",
+				"name": "226 225 225 226 226 226 227 227 229 229 229 231 23"
 			}
 		},
 		{
@@ -571,14 +647,6 @@
 				"buffer_size": 71,
 				"line_ending": "Unix"
 			}
-		},
-		{
-			"file": "ann/testoutput.txt",
-			"settings":
-			{
-				"buffer_size": 9767423,
-				"line_ending": "Unix"
-			}
 		}
 	],
 	"build_system": "",
@@ -588,10 +656,26 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 354.0,
-		"last_filter": "",
+		"height": 165.0,
+		"last_filter": "diffcu",
 		"selected_items":
 		[
+			[
+				"diffcu",
+				"Git: Diff Current File"
+			],
+			[
+				"file re",
+				"File: Revert"
+			],
+			[
+				"file",
+				"File: Revert"
+			],
+			[
+				"git ad",
+				"Git: Add All"
+			],
 			[
 				"gi tpull",
 				"Git: Pull"
@@ -611,10 +695,6 @@
 			[
 				"git com",
 				"Git: Commit"
-			],
-			[
-				"git ad",
-				"Git: Add All"
 			],
 			[
 				"git psuh",
@@ -1206,6 +1286,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"\\n(\\w\\s){1024,}\\n",
+			"\\n((?:\\d+\\s){1024})((?:\\d+\\s){1024})\\n",
+			"\\n(\\d+\\s){1024}(\\d+\\s){1024}\\n",
+			"\\n(?:\\d+\\s){1024}(\\d+\\s){1024}\\n",
+			" ",
 			"biased",
 			"comp",
 			"\\s+\\n",
@@ -1328,12 +1413,7 @@
 			"*",
 			", ",
 			")",
-			"(",
-			"), (",
-			"|",
-			"6",
-			"# print(",
-			"print("
+			"("
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1341,6 +1421,7 @@
 		"regex": true,
 		"replace_history":
 		[
+			"\\n$1\\n$1\\n",
 			"\\n",
 			",0",
 			"\\n",
@@ -1395,12 +1476,12 @@
 		"show_context": true,
 		"use_buffer2": true,
 		"whole_word": false,
-		"wrap": true
+		"wrap": false
 	},
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 9,
 			"sheets":
 			[
 				{
@@ -1425,8 +1506,8 @@
 							"incomplete_sync": null,
 							"origPos":
 							[
-								0.0,
-								88.0
+								2.0,
+								1246.0
 							],
 							"remote_loading": false,
 							"syncScroll": false,
@@ -1435,11 +1516,11 @@
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 0.0,
-						"translation.y": 88.0,
+						"translation.x": 2.0,
+						"translation.y": 1246.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -1455,8 +1536,8 @@
 						"selection":
 						[
 							[
-								1670,
-								1677
+								16181,
+								16181
 							]
 						],
 						"settings":
@@ -1465,7 +1546,7 @@
 							"origPos":
 							[
 								0.0,
-								3688.0
+								6660.0
 							],
 							"remote_loading": false,
 							"syncScroll": false,
@@ -1475,27 +1556,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3688.0,
+						"translation.y": 6660.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "ann/main.cpp",
+					"file": "ann/learned/3500learned-weights",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6497,
+						"buffer_size": 9211681,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6152,
-								6152
+								2153,
+								2153
 							]
 						],
 						"settings":
@@ -1504,7 +1585,155 @@
 							"origPos":
 							[
 								0.0,
-								2044.0
+								0.0
+							],
+							"remote_loading": false,
+							"syncScroll": false,
+							"synced": false,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "ann/learned/4000learned-weights",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 9704444,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8614404,
+								8614404
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"origPos":
+							[
+								19712.0,
+								13712.0
+							],
+							"remote_loading": false,
+							"syncScroll": false,
+							"synced": false,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 13534.0,
+						"translation.y": 13712.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "ann/learned/3000learned-weights",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9723515,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"origPos":
+							[
+								0.0,
+								0.0
+							],
+							"remote_loading": false,
+							"syncScroll": false,
+							"synced": false,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "ann/learned/2500learned-weights",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9732859,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"origPos":
+							[
+								0.0,
+								0.0
+							],
+							"remote_loading": false,
+							"syncScroll": false,
+							"synced": false,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "ann/main.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7761,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7336,
+								7342
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"origPos":
+							[
+								1.0,
+								2265.0
 							],
 							"remote_loading": false,
 							"syncScroll": false,
@@ -1513,15 +1742,194 @@
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
+						"translation.x": 1.0,
+						"translation.y": 2265.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "ann/test-input-5",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 241077,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								114964,
+								118565
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"origPos":
+							[
+								24209.0,
+								48.0
+							],
+							"remote_loading": false,
+							"syncScroll": false,
+							"synced": false,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 24209.0,
+						"translation.y": 48.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3601,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3601,
+								3601
+							]
+						],
+						"settings":
+						{
+							"auto_name": "255 255 255 255 255 255 254 252 255 255 220 149 10",
+							"incomplete_sync": null,
+							"origPos":
+							[
+								24202.0,
+								0.0
+							],
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 24202.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "ann/test-output-5",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 126,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								113,
+								113
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"origPos":
+							[
+								0.0,
+								882.0
+							],
+							"remote_loading": false,
+							"syncScroll": false,
+							"synced": false,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
 						"translation.x": 0.0,
-						"translation.y": 2044.0,
+						"translation.y": 882.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 10,
+					"file": "ann/train-input-5",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 974378,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								826673,
+								826673
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"origPos":
+							[
+								0.0,
+								0.0
+							],
+							"remote_loading": false,
+							"syncScroll": false,
+							"synced": false,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 27680.0,
+						"translation.y": 2738.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3827,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3827,
+								3827
+							]
+						],
+						"settings":
+						{
+							"auto_name": "226 225 225 226 226 226 227 227 229 229 229 231 23",
+							"incomplete_sync": null,
+							"origPos":
+							[
+								25779.0,
+								0.0
+							],
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 25779.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
 					"file": "ann/teststructure.txt",
 					"semi_transient": false,
 					"settings":
@@ -1546,17 +1954,20 @@
 								0.0,
 								0.0
 							],
+							"remote_loading": false,
+							"syncScroll": false,
+							"synced": false,
 							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 14,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 13,
 					"file": "ann/testsimplebiased.txt",
 					"semi_transient": false,
 					"settings":
@@ -1589,11 +2000,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 13,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 14,
 					"file": "ann/testsimplebiased-out.txt",
 					"semi_transient": false,
 					"settings":
@@ -1626,43 +2037,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "ann/testoutput.txt",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 9767423,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"origPos":
-							[
-								0.0,
-								0.0
-							],
-							"remote_loading": false,
-							"syncScroll": false,
-							"synced": false,
-							"syntax": "Packages/Djaneiro/Syntaxes/HTML (Django).tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
+					"stack_index": 12,
 					"type": "text"
 				}
 			]
@@ -1715,7 +2090,7 @@
 	"project": "ann.sublime-project",
 	"replace":
 	{
-		"height": 44.0
+		"height": 92.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -1724,6 +2099,18 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"tetsout5",
+				"test-output-5"
+			],
+			[
+				"train",
+				"train-input-5"
+			],
+			[
+				"testinput5",
+				"test-input-5"
+			],
 			[
 				"0test",
 				"0testoutput.txt"
@@ -2223,18 +2610,6 @@
 			[
 				"35osl",
 				"35/solution.py"
-			],
-			[
-				"160input",
-				"160/input.txt"
-			],
-			[
-				"solutionsw",
-				"160/solution.swift"
-			],
-			[
-				"craz",
-				"160/crazy.txt"
 			]
 		],
 		"width": 0.0

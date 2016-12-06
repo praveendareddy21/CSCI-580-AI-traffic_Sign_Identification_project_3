@@ -3,7 +3,7 @@ import sys
 # This needs to round robin over a list of input files and it needs to track which is which
 
 # administrative work here...
-kinds = ['crosswalk','donotenter','noparking','railroad','speed','stop','yield']
+kinds = ['crosswalk','noparking','railroad','speed','stop','yield']
 kinds_count = len(kinds)
 
 data_files = []

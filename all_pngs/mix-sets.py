@@ -3,15 +3,15 @@ import sys
 # This needs to round robin over a list of input files and it needs to track which is which
 
 # administrative work here...
-kinds = ['crosswalk','noparking','railroad','speed','stop','yield']
+kinds = ['noparking','speed','stop','yield']
 kinds_count = len(kinds)
 
 data_files = []
 
-train_input = open("train-input-5", 'w')
-train_output = open("train-output-5", 'w')
-test_input = open("test-input-5", 'w')
-test_output = open("test-output-5", 'w')
+train_input = open("train-input-7", 'w')
+train_output = open("train-output-7", 'w')
+test_input = open("test-input-7", 'w')
+test_output = open("test-output-7", 'w')
 
 for kind in kinds:
     data_files.append(open(kind + '/all.bin'))
