@@ -1,5 +1,12 @@
 Project Description
 
+
+# Dataset Preparation Steps
+1. scraped images from bing for different kinds of road signs
+2. filtered out all the incorrect ones
+3. resized to 16x16 with color and 32x32 in grayscale
+4. We extracted the value for each pixel and wrote it to a .bin file in order to read it as input to our neural network
+
 # CSCI_580
 A place for resources for AI.
 
