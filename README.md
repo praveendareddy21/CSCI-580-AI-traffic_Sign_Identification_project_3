@@ -11,12 +11,13 @@ Project Description
 # Traffic Signs Encoding
 We used the following encoding to store traffic sign data.
 
-0: Crosswalk
-1: No Parking
-2: Railroad
-3: Speed
-4: Stopsign
-5: Yield
+Crosswalk - 0<br />
+No Parking -1<br />
+Railroad - 2<br />
+Speed Limit -3<br />
+Stop sign - 4<br />
+Yield -5<br />
+
 # CSCI_580
 A place for resources for AI.
 
