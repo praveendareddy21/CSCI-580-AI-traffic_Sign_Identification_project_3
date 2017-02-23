@@ -1,12 +1,19 @@
-Project Description
-
+# Project Description
+Artificial Neural Network to classify US roadsigns from 32X32 size images.
+We have used sigmoid activation function for back-propagation algorithm and used euclidean distance for output layer classification.
+We used BLAS (Basic Linear Algebra Subprograms) routines for faster training of dataset.
 
 # Dataset Preparation Steps
 1. scraped images from bing for different kinds of road signs
 2. filtered out all the incorrect ones
 3. resized to 16x16 with color and 32x32 in grayscale
-4. normalized the pixel values to be in range of 0  to 1.0
+4. normalized the pixel values to be in range of 0.0  to 1.0
 5. extracted the value for each pixel and wrote it to a .bin file in order to read it as input to our neural network
+
+# Data Augmentation
+ We performed data augmentation on dataset to counter overfitting and to increase dataset size
+ We used python libraries ImageMagick and PIL for flipping over X-axis ,rotating images by 15 degrees , cropping out parts etc
+
 
 # Traffic Signs Encoding
 We used the following encoding to store traffic sign data.
@@ -23,9 +30,5 @@ A place for resources for AI.
 
 ## Formulas:
 
-![Formulas](Screen Shot 2016-09-06 at 1.03.51 PM.png)
 
-![Formulas](Screen Shot 2016-09-06 at 1.05.24 PM.png)
-
-![Formulas](Screen Shot 2016-09-06 at 1.12.50 PM.png)
 
