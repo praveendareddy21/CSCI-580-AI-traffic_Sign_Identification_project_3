@@ -18,12 +18,12 @@ We used BLAS (Basic Linear Algebra Subprograms) routines for faster training of 
 # Traffic Signs Encoding
 We used the following encoding to store traffic sign data.
 
-Crosswalk - 0<br />
-No Parking -1<br />
-Railroad - 2<br />
-Speed Limit -3<br />
-Stop sign - 4<br />
-Yield -5<br />
+Crosswalk - 0  
+No Parking -1  
+Railroad - 2  
+Speed Limit -3  
+Stop sign - 4  
+Yield -5  
 
 # CSCI_580
 A place for resources for AI.
